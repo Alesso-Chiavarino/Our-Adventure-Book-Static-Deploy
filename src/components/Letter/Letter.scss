@@ -1,0 +1,67 @@
+.letter-container {
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.32) 0px 0px 7px 0px;
+    width: 350px;
+    height: 200px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 5px;
+    padding-bottom: 25px;
+
+    h3 {
+        font-size: 20px;
+        font-family: mark-bold;
+        color: #202020;
+    }
+
+}
+
+.letter-container-off {
+    @extend .letter-container;
+    background-color: rgba(0, 0, 0, 0.137);
+}
+
+.letter {
+    border-radius: 0 0 5px 5px;
+    height: 100%;
+    width: 100%;
+    background-image: url('../../../public/img/letter.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: top;
+    background-color: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-off {
+    border-radius: 0 0 5px 5px;
+    height: 100%;
+    width: 100%;
+    background-image: url('../../../public/img/letterOff.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: top;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-icon {
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 5px;
+
+    &:hover {
+        transition: all 0.3s;
+        background-color: #fff;
+        color: #202020;
+    }
+}

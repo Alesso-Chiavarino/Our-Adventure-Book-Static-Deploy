@@ -1,0 +1,76 @@
+.letter-form-section {
+    background-color: #0E0E0E;
+    min-height: 100vh;
+
+    h1 {
+        font-size: 40px;
+        color: #fff;
+        text-align: center;
+        font-family: mark-heavy;
+        margin: 20px 0;
+    }
+
+    .letter-detail {
+        min-height: 650px;
+        background-color: #171717;
+        padding: 30px;
+        color: #ccc;
+
+        hr {
+            border: 1px solid #0BCCAC;
+            margin: 10px 0;
+
+        }
+
+        .input-title {
+            font-size: 20px;
+            font-family: mark-heavy;
+            margin: 10px 0;
+            color: #fff;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(204, 204, 204, 0.459);
+            outline: none;
+            box-shadow: none;
+            width: 75%;
+        }
+
+        .input-date {
+            @extend .input-title;
+            font-size: 16px;
+            font-family: mark-mediumF;
+            text-align: center;
+            width: 25%;
+        }
+
+        .input-description {
+            color: rgba(204, 204, 204, 0.842);
+            font-size: 16px;
+            min-height: 500px;
+            max-height: 500px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(204, 204, 204, 0.459);
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    .letter-detail-container {
+        background-color: #0BCCAC;
+        padding: 5px;
+        box-shadow: rgb(11 204 172 / 54%) 0px 2px 8px 0px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+}
+
+textarea::-webkit-scrollbar {
+    border-radius: 10px;
+    background-color: #0BCCAC;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #1a7566;
+}
