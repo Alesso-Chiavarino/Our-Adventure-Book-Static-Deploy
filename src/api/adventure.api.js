@@ -1,15 +1,15 @@
 import axios from 'axios'
 
 export const getAdventuresRequest = async () => {
-    return await axios.get('/api/adventure');
+    return await axios.get('https://ouradventurebookdeploy-production.up.railway.app/api/adventure');
 }
 
 export const getLimitedAdventuresRequest = async (limit, page, search) => {
-    return await axios.get(`/api/adventure?limit=${limit}&page=${page}&search=${search}`);
+    return await axios.get(`https://ouradventurebookdeploy-production.up.railway.app/api/adventure?limit=${limit}&page=${page}&search=${search}`);
 }
 
 export const getAdventureRequest = async (id) => {
-    return await axios.get(`/api/adventure/${id}`);
+    return await axios.get(`https://ouradventurebookdeploy-production.up.railway.app/api/adventure/${id}`);
 }
 
 export const createAdventureRequest = async (data) => {
@@ -21,7 +21,7 @@ export const createAdventureRequest = async (data) => {
     form.append('category', data.category)
     form.append('image', data.image)
 
-    return await axios.post('/api/adventure', form, {
+    return await axios.post('https://ouradventurebookdeploy-production.up.railway.app/api/adventure', form, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }
@@ -36,7 +36,7 @@ export const updateAdventureRequest = async (id, data) => {
     form.append('category', data.category)
     form.append('image', data.image)
 
-    return await axios.put(`/api/adventure/${id}`, form, {
+    return await axios.put(`https://ouradventurebookdeploy-production.up.railway.app/api/adventure/${id}`, form, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }
@@ -44,5 +44,5 @@ export const updateAdventureRequest = async (id, data) => {
 }
 
 export const deleteAdventureRequest = async (id) => {
-    return await axios.delete(`/api/adventure/${id}`);
+    return await axios.delete(`https://ouradventurebookdeploy-production.up.railway.app/api/adventure/${id}`);
 }
