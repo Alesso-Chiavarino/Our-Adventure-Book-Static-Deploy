@@ -32,10 +32,13 @@ const LetterDetail = () => {
                         }} />
                         <div className='flex justify-between items-center'>
                             <h3>{letter.data?.title}</h3>
-                            <span>{letter.data?.date}</span>
+                            <span className='date'>{letter.data?.date}</span>
                         </div>
                         <hr className='mb-3' />
-                        <p>{letter.data?.description}</p>
+                        <textarea spellCheck="false" value={letter.data?.description} />
+                        <div className='flex justify-end'>
+                            <span className='date'>{letter.data?.author}</span>
+                        </div>
                     </article>
                 </div>
             </main>

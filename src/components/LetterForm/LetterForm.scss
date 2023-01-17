@@ -13,7 +13,7 @@
     .letter-detail {
         min-height: 650px;
         background-color: #171717;
-        padding: 30px;
+        padding: 20px 20px 5px 20px;
         color: #ccc;
 
         hr {
@@ -38,7 +38,7 @@
         .input-date {
             @extend .input-title;
             font-size: 16px;
-            font-family: mark-mediumF;
+            font-family: mark-medium;
             text-align: center;
             width: 25%;
         }
@@ -54,6 +54,15 @@
             outline: none;
             box-shadow: none;
         }
+
+        .input-author {
+            @extend .input-title;
+            font-size: 14px;
+            font-family: mark-medium;
+            text-align: center;
+            width: 40%;
+        }
+
     }
 
     .letter-detail-container {
@@ -62,6 +71,31 @@
         box-shadow: rgb(11 204 172 / 54%) 0px 2px 8px 0px;
         border-radius: 5px;
         overflow: hidden;
+    }
+}
+
+.send-btn {
+    // background-color: #0BCCAC;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+    font-family: mark-bold;
+    padding: 5px 20px;
+    border: 1px solid #0BCCAC;
+    // border: none;
+    border-radius: 5px;
+    position: absolute;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        // background-color: #1a7566;
+        box-shadow: rgb(11 204 172 / 54%) 0px 2px 8px 0px;
+    // border-radius: 5px;
+
     }
 }
 

@@ -17,7 +17,7 @@ const LetterForm = () => {
     const [title, setTitle] = useState('')
     const [date, setDate] = useState('')
     const [description, setDescription] = useState('')
-    // const [author, setAuthor] = useState('')
+    const [author, setAuthor] = useState('')
 
 
     useEffect(() => {
@@ -29,6 +29,7 @@ const LetterForm = () => {
                 setTitle(letter.data.title)
                 setDate(letter.data.date)
                 setDescription(letter.data.description)
+                setAuthor(letter.data.author)
             }
         }
         loadData()
@@ -46,18 +47,24 @@ const LetterForm = () => {
         setDescription(e.target.value)
     }
 
+    const handleInputAuthor = (e) => {
+        setAuthor(e.target.value)
+    }
+
     const handleSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         if (params.id) {
             updateLetter(params.id, {
                 title,
                 description,
+                author,
                 date
             })
             setTitle('')
             setDate('')
             setDescription('')
+            setAuthor('')
 
             navigate(-1);
 
@@ -67,11 +74,13 @@ const LetterForm = () => {
         createLetter({
             title,
             description,
+            author,
             date
         })
         setTitle('')
         setDate('')
         setDescription('')
+        setAuthor('')
 
         navigate(-1);
 
@@ -89,7 +98,7 @@ const LetterForm = () => {
     const handleButtons = () => {
         if (isSubmit) {
             return (
-                <button type="submit" className='absolute bottom-16'>Sending
+                <button type="submit" className='send-btn'>Sending
                     <ThreeDots
                         height="20"
                         width="30"
@@ -104,7 +113,10 @@ const LetterForm = () => {
             )
         } else {
             return (
-                <button type="submit" className='absolute bottom-16' onClick={() => setIsSubmit(true)} ><RiSendPlaneFill /> Send</button>
+                <button type="submit" className='send-btn' onClick={() => {
+                    setIsSubmit(true)
+                    handleSubmit()
+                }} ><RiSendPlaneFill /> Send</button>
             )
         }
     }
@@ -113,7 +125,7 @@ const LetterForm = () => {
 
         if (isSubmit) {
             return (
-                <button type="submit" className='absolute bottom-16'>Updating
+                <button type="submit" className='send-btn'>Updating
                     <ThreeDots
                         height="20"
                         width="30"
@@ -128,7 +140,10 @@ const LetterForm = () => {
             )
         } else {
             return (
-                <button type="submit" className='absolute bottom-16' onClick={() => setIsSubmit(true)} ><RxUpdate /> Update</button>
+                <button type="submit" className='send-btn' onClick={() => {
+                    setIsSubmit(true)
+                    handleSubmit()
+                }} ><RxUpdate /> Update</button>
             )
         }
     }
@@ -140,7 +155,7 @@ const LetterForm = () => {
                 <main className='container mx-auto flex flex-col items-center'>
                     <h1>Edit a Letter</h1>
                     <div className='letter-detail-container'>
-                        <form className='w-full relative' onSubmit={handleSubmit}>
+                        <form className='w-full relative'>
                             <TbArrowBackUp className='text-gray-300 text-xl absolute top-2 left-2 cursor-pointer hover:text-white' onClick={() => {
                                 navigate(-1)
                                 window.scroll(0, 0);
@@ -158,9 +173,16 @@ const LetterForm = () => {
                                 <textarea type="text" className='input-description w-full' placeholder='Write what you want to say ' value={description} onChange={(e) => {
                                     handleInputDescription(e);
                                 }} />
+                                <div className='flex justify-end'>
+                                    <input type="text" className='input-author' value={author} placeholder='Author...' onChange={(e) => {
+                                        handleInputAuthor(e);
+                                    }} />
+                                </div>
                             </article>
-                            {handleArea()}
                         </form>
+                        <div className='flex justify-center'>
+                            {handleArea()}
+                        </div>
                     </div>
                 </main>
             </section>
@@ -191,9 +213,16 @@ const LetterForm = () => {
                                 <textarea type="text" className='input-description w-full' placeholder='Write what you want to say ' onChange={(e) => {
                                     handleInputDescription(e);
                                 }} />
+                                <div className='flex justify-end'>
+                                    <input type="text" className='input-author' value={author} placeholder='Author...' onChange={(e) => {
+                                        handleInputAuthor(e);
+                                    }} />
+                                </div>
                             </article>
-                            {handleArea()}
                         </form>
+                        <div className='flex justify-center'>
+                            {handleArea()}
+                        </div>
                     </div>
                 </main>
             </section>
