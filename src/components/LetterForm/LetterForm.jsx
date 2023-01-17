@@ -52,7 +52,7 @@ const LetterForm = () => {
     }
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
 
         if (params.id) {
             updateLetter(params.id, {
@@ -115,7 +115,7 @@ const LetterForm = () => {
             return (
                 <button type="submit" className='send-btn' onClick={() => {
                     setIsSubmit(true)
-                    handleSubmit()
+                    // handleSubmit()
                 }} ><RiSendPlaneFill /> Send</button>
             )
         }
@@ -142,7 +142,7 @@ const LetterForm = () => {
             return (
                 <button type="submit" className='send-btn' onClick={() => {
                     setIsSubmit(true)
-                    handleSubmit()
+                    // handleSubmit()
                 }} ><RxUpdate /> Update</button>
             )
         }
@@ -180,10 +180,10 @@ const LetterForm = () => {
                                 </div>
                             </article>
                         </form>
-                        <div className='flex justify-center'>
-                            {handleArea()}
-                        </div>
                     </div>
+                    <form className='flex justify-center mt-7' onSubmit={handleSubmit}>
+                        {handleArea()}
+                    </form>
                 </main>
             </section>
         )
@@ -220,10 +220,10 @@ const LetterForm = () => {
                                 </div>
                             </article>
                         </form>
-                        <div className='flex justify-center'>
-                            {handleArea()}
-                        </div>
                     </div>
+                    <form className='flex justify-center mt-7' onSubmit={handleSubmit}>
+                        {handleArea()}
+                    </form>
                 </main>
             </section>
         )

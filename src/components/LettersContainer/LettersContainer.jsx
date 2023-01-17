@@ -12,7 +12,7 @@ const LettersContainer = () => {
 
     useEffect(() => {
         getLetters(1);
-    }, [])
+    }, [letters])
 
     const handleNext = () => {
         if (letters.hasNextPage) {
