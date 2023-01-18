@@ -11,6 +11,10 @@ export const LetterProvider = ({ children }) => {
 
     const [letters, setLetters] = useState([]);
 
+    const changeLetterState = (letters) => {
+        setLetters(letters)
+    }
+
     const getLetters = async (page) => {
         const letters = await getLettersRequest(page)
         setLetters(letters.data);
@@ -39,7 +43,7 @@ export const LetterProvider = ({ children }) => {
     }
 
     return (
-        <LetterContext.Provider value={{ letters, getLetters, getLetter, createLetter, updateLetter, deleteLetter }}>
+        <LetterContext.Provider value={{ letters, getLetters, getLetter, createLetter, updateLetter, deleteLetter, changeLetterState }}>
             {children}
         </LetterContext.Provider>
     )

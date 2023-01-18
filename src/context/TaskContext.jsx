@@ -12,6 +12,10 @@ const TaskProvider = ({ children }) => {
 
     const [tasks, setTasks] = useState([])
 
+    const changeTasksState = (tasks) => {
+        setTasks(tasks)
+    }
+
     const getTasks = async (isDone, page) => {
         const tasks = await getTasksRequest(isDone, page);
         setTasks(tasks.data);
@@ -51,7 +55,8 @@ const TaskProvider = ({ children }) => {
             getTask,
             createTask,
             updateTask,
-            deleteTask
+            deleteTask,
+            changeTasksState
         }}>
             {children}
         </TaskContext.Provider>
