@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const LettersContainer = () => {
 
-    const { getLetters, letters, deleteLetter, changeLetterState } = useLetter();
+    const { getLetters, letters, deleteLetter } = useLetter();
     const [loader, setLoader] = useState(true);
 
     useEffect(() => {

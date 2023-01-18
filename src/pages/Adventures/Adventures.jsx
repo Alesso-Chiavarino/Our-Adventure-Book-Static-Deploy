@@ -24,7 +24,11 @@ const Adventures = () => {
     const [partyFilter, setPartyFilter] = useState(false);
     const [loader, setLoader] = useState(true);
 
-    const handleAllFilter = async () => {
+    const { search } = useSearch();
+
+    const { fav } = useParams();
+
+    const handleAllFilter = async (search) => {
         try {
             changeAdventuresState([])
             setLoader(true)
@@ -120,22 +124,40 @@ const Adventures = () => {
         }
     }
 
-    const { search } = useSearch();
-
-    const { fav } = useParams();
-
     useEffect(() => {
-        if (fav) {
-            handleFavoritesFilter()
-            if (allFilter) {
-                handleConfirm(true);
-                handleFavoritesFilter()
-            } else {
-                handleConfirm(false);
+        const loadAdventures = async () => {
+            try {
+                if (fav) {
+                    if (allFilter) {
+                        handleConfirm(true);
+                        await handleFavoritesFilter();
+                    } else {
+                        handleConfirm(false);
+                    }
+                    await handleFavoritesFilter();
+                    return;
+                }
+                if (search) {
+                    setLoader(true)
+                    setAllFilter(true)
+                    setTravelFilter(false)
+                    setFavoritesFilter(false)
+                    setHomeFilter(false)
+                    setPartyFilter(false)
+                    await getLimitedAdventures(12, 1, search)
+                    setLoader(false);
+                    return;
+                }
+                await handleAllFilter();
             }
-            return;
+            catch (error) {
+                console.log(error)
+            }
+            finally {
+                setLoader(false);
+            }
         }
-        handleAllFilter()
+        loadAdventures()
     }, [page, search, fav])
 
     const handleNextPage = () => {

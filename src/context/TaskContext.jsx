@@ -32,7 +32,7 @@ const TaskProvider = ({ children }) => {
     }
 
     const updateTask = async (id, task, isDone) => {
-        const updatedTask = await updateTaskRequest(id, task);
+        await updateTaskRequest(id, task);
         if(isDone || !isDone) {
             const tasks = await getTasksRequest(isDone, 1);
             return setTasks(tasks.data);
