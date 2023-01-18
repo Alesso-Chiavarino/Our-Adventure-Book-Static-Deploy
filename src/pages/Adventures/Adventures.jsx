@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom';
 
 const Adventures = () => {
 
-    const { adventures, data, getLimitedAdventures, confirm, handleConfirm } = useAdventure();
+    const { adventures, data, getLimitedAdventures, confirm, handleConfirm, changeAdventuresState } = useAdventure();
     const [page, setPage] = useState(1)
     const previusRef = useRef(null);
     const nextRef = useRef(null);
@@ -22,78 +22,107 @@ const Adventures = () => {
     const [favoritesFilter, setFavoritesFilter] = useState(false);
     const [homeFilter, setHomeFilter] = useState(false);
     const [partyFilter, setPartyFilter] = useState(false);
+    const [loader, setLoader] = useState(true);
 
-    const handleAllFilter = () => {
-        setAllFilter(true)
-        setTravelFilter(false)
-        setFavoritesFilter(false)
-        setHomeFilter(false)
-        setPartyFilter(false)
-        setPage(1);
-        getLimitedAdventures(12, 1, '')
+    const handleAllFilter = async () => {
+        try {
+            changeAdventuresState([])
+            setLoader(true)
+            setAllFilter(true)
+            setTravelFilter(false)
+            setFavoritesFilter(false)
+            setHomeFilter(false)
+            setPartyFilter(false)
+            setPage(1);
+            await getLimitedAdventures(12, 1, '')
+        }
+        catch (error) {
+            console.log(error)
+        }
+        finally {
+            setLoader(false);
+        }
     }
 
-    const handlePartyFilter = () => {
-        setPartyFilter(true)
-        setTravelFilter(false)
-        setFavoritesFilter(false)
-        setHomeFilter(false)
-        setAllFilter(false)
-        getLimitedAdventures(12, 1, 'party')
+    const handlePartyFilter = async () => {
+        try {
+            changeAdventuresState([])
+            setLoader(true)
+            setPartyFilter(true)
+            setTravelFilter(false)
+            setFavoritesFilter(false)
+            setHomeFilter(false)
+            setAllFilter(false)
+            await getLimitedAdventures(12, 1, 'party')
+        }
+        catch (error) {
+            console.log(error)
+        }
+        finally {
+            setLoader(false);
+        }
     }
 
-    const handleTravelFilter = () => {
-        setTravelFilter(true)
-        setFavoritesFilter(false)
-        setHomeFilter(false)
-        setPartyFilter(false)
-        setAllFilter(false)
-        getLimitedAdventures(12, 1, 'travel')
+    const handleTravelFilter = async () => {
+        try {
+            changeAdventuresState([])
+            setLoader(true)
+            setTravelFilter(true)
+            setFavoritesFilter(false)
+            setHomeFilter(false)
+            setPartyFilter(false)
+            setAllFilter(false)
+            await getLimitedAdventures(12, 1, 'travel')
+        }
+        catch (error) {
+            console.log(error)
+        }
+        finally {
+            setLoader(false);
+        }
     }
 
-    const handleFavoritesFilter = () => {
-        setFavoritesFilter(true)
-        setTravelFilter(false)
-        setHomeFilter(false)
-        setPartyFilter(false)
-        setAllFilter(false)
-        getLimitedAdventures(12, 1, 'fav')
+    const handleFavoritesFilter = async () => {
+        try {
+            changeAdventuresState([])
+            setLoader(true)
+            setFavoritesFilter(true)
+            setTravelFilter(false)
+            setHomeFilter(false)
+            setPartyFilter(false)
+            setAllFilter(false)
+            await getLimitedAdventures(12, 1, 'fav')
+        }
+        catch (error) {
+            console.log(error)
+        }
+        finally {
+            setLoader(false);
+        }
     }
 
-    const handleHomeFilter = () => {
-        setHomeFilter(true)
-        setTravelFilter(false)
-        setFavoritesFilter(false)
-        setPartyFilter(false)
-        setAllFilter(false)
-        getLimitedAdventures(12, 1, 'home')
+    const handleHomeFilter = async () => {
+        try {
+            changeAdventuresState([])
+            setLoader(true)
+            setHomeFilter(true)
+            setTravelFilter(false)
+            setFavoritesFilter(false)
+            setPartyFilter(false)
+            setAllFilter(false)
+            await getLimitedAdventures(12, 1, 'home')
+        }
+        catch (error) {
+            console.log(error)
+        }
+        finally {
+            setLoader(false);
+        }
     }
 
     const { search } = useSearch();
 
-    useEffect(() => {
-        getLimitedAdventures(12, page, search);
-    }, [page, search])
-
-    const handleNextPage = () => {
-        if (data.hasNextPage) {
-            setPage(page + 1)
-        }
-    }
-
-    const handlePreviusPage = () => {
-        if (data.hasPrevPage) {
-            setPage(page - 1)
-        }
-    }
-
     const { fav } = useParams();
-
-
-
-    const conectToChild = (data) => {
-        console.log(data)
-    }
 
     useEffect(() => {
         if (fav) {
@@ -104,8 +133,55 @@ const Adventures = () => {
             } else {
                 handleConfirm(false);
             }
+            return;
         }
-    }, [fav])
+        handleAllFilter()
+    }, [page, search, fav])
+
+    const handleNextPage = () => {
+        if (data.hasNextPage) {
+            setPage(data.nextPage)
+        }
+    }
+
+    const handlePreviusPage = () => {
+        if (data.hasPrevPage) {
+            setPage(data.prevPage)
+        }
+    }
+
+    const conectToChild = (data) => {
+        console.log(data)
+    }
+
+    const loadAdventures = () => {
+        if (loader) {
+            return (
+                <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-3 gap-y-4 md:gap-y-0 md:gap-3"'>
+                    <span className="loader-adventure"></span>
+                    <span className="loader-adventure"></span>
+                    <span className="loader-adventure"></span>
+                    <span className="loader-adventure"></span>
+                    <span className="loader-adventure"></span>
+                    <span className="loader-adventure"></span>
+                </div>
+            )
+        }
+        if (adventures.length === 0) {
+            return (
+                <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-3 gap-y-4 md:gap-y-0 md:gap-3"'>
+                    <div className='col-span-4'>
+                        <h1 className='text-2xl text-white font-bold text-center'>No adventures yet :&#40;</h1>
+                    </div>
+                </div>
+            )
+        }
+        return (
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-3 gap-y-4 md:gap-y-0 md:gap-3"'>
+                {adventures.map((adv, i) => <Adventure setAllFilter={setAllFilter} conectToChild={conectToChild} confirm={confirm} setFavoritesFilter={setFavoritesFilter} {...adv} id={i} key={adv._id} />)}
+            </div>
+        )
+    }
 
     return (
         <section className='adventures-section min-h-screen'>
@@ -165,9 +241,7 @@ const Adventures = () => {
                                 :
                                 <span className='flex  bg-green-900 text-white rounded-md justify-center items-center text-sm  gap-1 py-1 px-2 cursor-pointer' onClick={handleNextPage} ref={nextRef}  >Next<RxDoubleArrowRight className='text-white' /></span>}
                         </div>
-                        <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-3 gap-y-4 md:gap-y-0 md:gap-3"'>
-                            {adventures.map((adv, i) => <Adventure setAllFilter={setAllFilter} conectToChild={conectToChild} confirm={confirm} setFavoritesFilter={setFavoritesFilter} {...adv} id={i} key={adv._id} />)}
-                        </div>
+                        {loadAdventures()}
                     </div>
                 </div>
             </main>

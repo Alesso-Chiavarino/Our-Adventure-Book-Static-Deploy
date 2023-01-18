@@ -12,6 +12,10 @@ const AdventureProvider = ({ children }) => {
     const [adventures, setAdventures] = useState([]);
     const [data, setData] = useState({});
 
+    const changeAdventuresState = (adventures) => {
+        setAdventures(adventures)
+    }
+
     const getAdventures = async () => {
         const result = await getAdventuresRequest()
         setAdventures(result.data.docs)
@@ -42,7 +46,7 @@ const AdventureProvider = ({ children }) => {
     }
 
     const updateAdventure = async (id, data, limit, page, search) => {
-        const res = await updateAdventureRequest(id, data);
+        await updateAdventureRequest(id, data);
         // const updatedAdventure = res.data;
         const adventuress = await getLimitedAdventuresRequest(limit, page, search);
         setAdventures(adventuress.data.docs);
@@ -55,7 +59,7 @@ const AdventureProvider = ({ children }) => {
     }
 
     return (
-        <AdventureContext.Provider value={{ adventures, data, confirm, getAdventures, createAdventure, deleteAdventure, getAdventure, updateAdventure, getLimitedAdventures, handleConfirm }}>
+        <AdventureContext.Provider value={{ adventures, data, confirm, getAdventures, createAdventure, deleteAdventure, getAdventure, updateAdventure, getLimitedAdventures, handleConfirm, changeAdventuresState }}>
             {children}
         </AdventureContext.Provider>
     )

@@ -16,14 +16,28 @@ const AdventureModal = () => {
     const { getAdventure } = useAdventure();
     const { id } = useParams()
     const [adventure, setAdventure] = useState({})
+    const [loader, setLoader] = useState(true);
 
     useEffect(() => {
         const handleAdventure = async () => {
-            const res = await getAdventure(id)
-            setAdventure(res);
+
+            try {
+                const res = await getAdventure(id)
+                setAdventure(res);
+            }
+            catch (error) {
+                console.log(error)
+            }
+            finally {
+                // console.log('Adventure loaded')
+                setLoader(false)
+            }
         }
+
         handleAdventure()
     }, [])
+
+    loader ? console.log('loading') : console.log('loaded')
 
     const handleCategory = () => {
         if (adventure.category === 'fav') {
@@ -55,21 +69,32 @@ const AdventureModal = () => {
                             <a href={adventure.image?.url} target='_blank' rel='noreferrer' > <BiLinkAlt className='icon' /> </a>
                             <TbArrowBackUp className='icon2' onClick={() => navigate(-1)} />
                         </div>
-                        <div className="img-modal-adv-detail">
-                            <img src={adventure.image?.url} alt={adventure.title} />
-                        </div>
-                        <div className="modal-content-adv-detail flex flex-col justify-between">
-                            <h3>{adventure.title}</h3>
-                            <hr className='my-5' />
-                            <p className='description'>{adventure.description}</p>
-                            <hr className='my-5' />
-                            <div className="bottom-side flex justify-between">
-                                <div className="date flex items-center gap-2 text-gray-400">
-                                    <BsFillCalendarDateFill className='mb-1' /><span>{adventure.date}</span>
-                                </div>
-                                <span className="date flex items-center gap-2 text-gray-400">Category:{handleCategory()}</span>
+                        {loader ?
+                            <div className="img-modal-adv-detail flex justify-center items-center border-r-2">
+                                <span class="loader-picture"></span>
                             </div>
-                        </div>
+                            :
+                            <div className="img-modal-adv-detail border-l-2">
+                                <img src={adventure.image?.url} alt={adventure.title} />
+                            </div>}
+
+                        {loader ?
+                            <div className="modal-content-adv-detail flex justify-center items-center">
+                                <span class="loader-tea"></span>
+                            </div>
+                            :
+                            <div className="modal-content-adv-detail flex flex-col justify-between">
+                                <h3>{adventure.title}</h3>
+                                <hr className='my-5' />
+                                <p className='description'>{adventure.description}</p>
+                                <hr className='my-5' />
+                                <div className="bottom-side flex justify-between">
+                                    <div className="date flex items-center gap-2 text-gray-400">
+                                        <BsFillCalendarDateFill className='mb-1' /><span>{adventure.date}</span>
+                                    </div>
+                                    <span className="date flex items-center gap-2 text-gray-400">Category:{handleCategory()}</span>
+                                </div>
+                            </div>}
                     </div>
                 </div>
             </article>
