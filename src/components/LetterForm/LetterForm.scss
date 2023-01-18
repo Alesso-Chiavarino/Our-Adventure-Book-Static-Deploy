@@ -3,17 +3,17 @@
     min-height: 100vh;
 
     h1 {
-        font-size: 40px;
+        font-size: 2.5em;
         color: #fff;
         text-align: center;
         font-family: mark-heavy;
-        margin: 20px 0;
+        margin: 1.25rem 0;
     }
 
     .letter-detail {
-        min-height: 650px;
+        min-height: 40.625em;
         background-color: #171717;
-        padding: 20px 20px 5px 20px;
+        padding: 1.25em 1.25em 0.3125em 1.25em;
         color: #ccc;
 
         hr {
@@ -23,9 +23,9 @@
         }
 
         .input-title {
-            font-size: 20px;
+            font-size: 1.25em;
             font-family: mark-heavy;
-            margin: 10px 0;
+            margin: 0.625em 0;
             color: #fff;
             background-color: transparent;
             border: none;
@@ -37,7 +37,7 @@
 
         .input-date {
             @extend .input-title;
-            font-size: 16px;
+            font-size: 1em;
             font-family: mark-medium;
             text-align: center;
             width: 25%;
@@ -45,9 +45,9 @@
 
         .input-description {
             color: rgba(204, 204, 204, 0.842);
-            font-size: 16px;
-            min-height: 500px;
-            max-height: 500px;
+            font-size: 1em;
+            min-height: 31.25em;
+            max-height: 31.25em;
             background-color: transparent;
             border: none;
             border-bottom: 1px solid rgba(204, 204, 204, 0.459);
@@ -57,7 +57,7 @@
 
         .input-author {
             @extend .input-title;
-            font-size: 14px;
+            font-size: 0.875em;
             font-family: mark-medium;
             text-align: center;
             width: 40%;
@@ -67,7 +67,7 @@
 
     .letter-detail-container {
         background-color: #0BCCAC;
-        padding: 5px;
+        padding: 0.3125em;
         box-shadow: rgb(11 204 172 / 54%) 0px 2px 8px 0px;
         border-radius: 5px;
         overflow: hidden;
@@ -75,27 +75,22 @@
 }
 
 .send-btn {
-    // background-color: #0BCCAC;
     color: #fff;
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-size: 18px;
+    gap: 0.3125em;
+    font-size: 1.125em;
     font-family: mark-bold;
-    padding: 5px 20px;
+    padding: 0.3125rem 1.25em;
     border: 1px solid #0BCCAC;
-    // border: none;
-    border-radius: 5px;
+    border-radius: 0.3125em;
     position: absolute;
-    margin: 15px 0;
+    margin: 0.9375em 0;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-        // background-color: #1a7566;
         box-shadow: rgb(11 204 172 / 54%) 0px 2px 8px 0px;
-    // border-radius: 5px;
-
     }
 }
 

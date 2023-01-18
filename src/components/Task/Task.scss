@@ -1,29 +1,29 @@
 .task {
     background-color: #171717;
-    border-radius: 5px;
+    border-radius: 0.3125em;
     border: 1px solid rgba(255, 255, 255, 0.473);
     width: 100%;
-    // height: fit-content;
-    height: 200px;
+    height: 12.5em;
+
     .task-body {
-        // padding: 10px;
         .top {
-            // padding: 10px;
             background-color: #27272A;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         h5 {
             color: #fff;
             font-family: mark-heavy;
-            font-size: 20px;
+            font-size: 1.25em;
         }
+
         p {
-            padding: 10px;
+            padding: 0.625em;
             color: #ccc;
             font-family: mark-medium;
-            font-size: 15px;
+            font-size: 0.9375em;
         }
-    } 
+    }
 }

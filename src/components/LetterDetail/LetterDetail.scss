@@ -3,48 +3,46 @@
     min-height: 100vh;
 
     h1 {
-        font-size: 40px;
+        font-size: 2.5em;
         color: #fff;
         text-align: center;
         font-family: mark-heavy;
-        margin: 20px 0;
+        margin: 1.25rem 0;
     }
 
     .letter-detail {
-
-        // min-height: 700px;
-        min-height: 700px;
+        min-height: 43.75em;
         background-color: #171717;
-        padding: 20px 20px 10px 20px;
+        padding: 1.25em 1.25em 0.625em 1.25em;
         color: #ccc;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
         h3 {
-            font-size: 20px;
+            font-size: 1.25em;
             font-family: mark-heavy;
-            margin: 10px 0;
+            margin: 0.625em 0;
         }
 
         .date {
-            font-size: 16px;
+            font-size: 1em;
             font-family: mark-medium;
-            margin: 10px 0;
+            margin: 0.625em 0;
             border-bottom: 1px solid #0BCCAC;
         }
 
         hr {
             border: 1px solid #0BCCAC;
-            margin: 10px 0;
+            margin: 0.625em 0;
 
         }
 
         textarea {
             color: rgba(204, 204, 204, 0.842);
-            font-size: 16px;
-            min-height: 550px;
-            max-height: 550px;
+            font-size: 1em;
+            min-height: 34.375em;
+            max-height: 34.375em;
             background-color: transparent;
             border: none;
             border-bottom: 1px solid rgba(204, 204, 204, 0.459);
@@ -65,7 +63,7 @@
         height: 75%;
         width: 40%;
         background-color: #0BCCAC;
-        padding: 5px;
+        padding: 0.3125em;
         box-shadow: rgb(11 204 172 / 54%) 0px 2px 8px 0px;
         border-radius: 5px;
         overflow: hidden;
@@ -73,8 +71,8 @@
 
     .loader-heart {
         position: relative;
-        width: 40px;
-        height: 60px;
+        width: 2.5em;
+        height: 3.75em;
         animation: heartBeat 1.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 
@@ -82,15 +80,15 @@
     .loader-heart:after {
         content: "";
         background-color: #0BCCAC;
-        width: 40px;
-        height: 60px;
-        border-radius: 50px 50px 0 0;
+        width: 2.5em;
+        height: 3.75em;
+        border-radius: 3.125em 3.125em 0 0;
         position: absolute;
         left: 0;
         bottom: 0;
         transform: rotate(45deg);
         transform-origin: 50% 68%;
-        box-shadow: 5px 4px 5px #0004 inset;
+        box-shadow: 0.3125em 0.25em 0.3125em #0004 inset;
     }
 
     .loader-heart:after {

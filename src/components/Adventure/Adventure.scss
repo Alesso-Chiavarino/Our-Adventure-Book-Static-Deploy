@@ -1,6 +1,6 @@
 img {
-    width: 400px;
-    height: 400px;
+    width: 25em;
+    height: 25em;
     object-fit: cover;
 }
 
@@ -20,8 +20,8 @@ img {
     overflow: hidden;
 
     .adv-img {
-        width: 300px;
-        height: 200px;
+        width: 18.75em;
+        height: 12.5em;
         object-fit: cover;
         z-index: -54;
         opacity: 0.8;
@@ -30,7 +30,7 @@ img {
     h3 {
         text-align: left;
         font-family: mark-heavy;
-        font-size: 16px;
+        font-size: 1em;
     }
 
     .trash {
@@ -43,7 +43,7 @@ img {
 
     .adventure-middle {
         p {
-            font-size: 14px;
+            font-size: 0.875em;
             font-family: mark-medium !important;
             margin: 0;
             padding: 0;
@@ -52,27 +52,27 @@ img {
 
     .adventure-bottom {
         display: flex;
-        font-size: 14px;
+        font-size: 0.875em;
         background-color: #27272A;
-        padding: 8px 10px;
+        padding: 0.5em 0.625em;
         justify-content: right;
         align-items: center;
 
         p {
-            border-radius: 5px;
+            border-radius: 0.3125em;
             width: fit-content;
             background-color: #3F3F46;
             margin: 0;
             color: #fff;
-            padding: 3px 10px;
+            padding: 0.1875em 0.625em;
             font-family: mark-bold;
-            font-size: 12px;
+            font-size: 0.75em;
         }
     }
 
     &:hover {
         position: relative;
-        top: 5px;
+        top: 0.3125em;
 
         .edit {
             display: block;

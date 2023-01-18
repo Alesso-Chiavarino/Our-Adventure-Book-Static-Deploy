@@ -16,6 +16,7 @@ import LettersContainer from "./components/LettersContainer/LettersContainer";
 import LetterProvider from "./context/LetterContext";
 import LetterDetail from "./components/LetterDetail/LetterDetail";
 import LetterForm from "./components/LetterForm/LetterForm";
+import './styles/responsive.scss';
 
 const App = () => {
   return (

@@ -1,11 +1,10 @@
 .input-search {
-
-    width: 300px;
+    width: 18.75em;
     font-family: mark-medium;
-    font-size: 14px;
+    font-size: 0.875em;
     background-color: #292929;
     border: 1px solid rgba(255, 255, 255, 0.253);
-    border-radius: 5px;
+    border-radius: 0.3125em;
 
     &:focus {
         transition: all 0.2s;

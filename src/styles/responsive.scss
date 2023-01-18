@@ -1,0 +1,48 @@
+// ----------  RESPONSIVE  ---------- //
+
+// `xs` applies to extra small devices (portrait phones, less than 450px)
+@media screen and (max-width: 450px) {
+    body {
+        font-size: 14px !important;
+    }
+}
+
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media screen and (max-width: 576px) {
+    body {
+        font-size: 14px !important;
+    }
+}
+
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 10px !important;
+    }
+}
+
+
+// `lg` applies to medium devices (tablets, less than 992px)
+@media screen and (max-width: 992px) {
+    body {
+        font-size: 12px !important;
+    }
+}
+
+
+// `xl` applies to large devices (desktops, less than 1200px)
+@media screen and (max-width: 1200px) {
+    body {
+        font-size: 14px !important;
+    }
+}
+
+
+// `xxl` applies to extra large devices (large desktops, less than 1400px)
+@media screen and (max-width: 1400px) {
+    body {
+        font-size: 16px !important;
+    }
+}
