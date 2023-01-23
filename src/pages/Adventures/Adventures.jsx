@@ -160,15 +160,17 @@ const Adventures = () => {
         loadAdventures()
     }, [page, search, fav])
 
-    const handleNextPage = () => {
+    // console.log(data.hasNextPage)
+
+    const handleNextPage = async () => {
         if (data.hasNextPage) {
-            setPage(data.nextPage)
+            await getLimitedAdventures(12, data.nextPage, '')
         }
     }
 
-    const handlePreviusPage = () => {
+    const handlePreviusPage = async () => {
         if (data.hasPrevPage) {
-            setPage(data.prevPage)
+            await getLimitedAdventures(12, data.prevPage, '')
         }
     }
 
@@ -199,7 +201,7 @@ const Adventures = () => {
             )
         }
         return (
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-3 gap-y-4 md:gap-y-0 md:gap-3"'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-3 gap-y-4 gap-3 md:gap-3"'>
                 {adventures.map((adv, i) => <Adventure setAllFilter={setAllFilter} conectToChild={conectToChild} confirm={confirm} setFavoritesFilter={setFavoritesFilter} {...adv} id={i} key={adv._id} />)}
             </div>
         )

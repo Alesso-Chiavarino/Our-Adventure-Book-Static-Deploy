@@ -58,7 +58,7 @@ const LettersContainer = () => {
                             <span class="loader-letter"></span>
                         </div>
                         :
-                        <div className='grid grid-cols-3 gap-10'>
+                        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10'>
                             {letters.docs?.map(lett => <Letter key={lett._id} id={lett._id} {...lett} deleteLetter={deleteLetter} />)}
                         </div>}
                 </div>

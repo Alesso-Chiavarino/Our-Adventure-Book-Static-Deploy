@@ -151,7 +151,7 @@ const TasksContainer = () => {
                                 <span className="loader-task"></span>
                             </div>
                             :
-                            <div className='grid md:grid-cols-3 sm:grid-cols-2 gap-5'>
+                            <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5'>
                                 {tasks.docs?.map((task) => <Task key={task._id} {...task} deleteTask={deleteTask} updateTask={updateTask} isDone={isDone} isPending={isPending} getTasks={getTasks} isAll={isAll} />)}
                             </div>}
                     </div>

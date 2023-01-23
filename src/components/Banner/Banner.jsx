@@ -20,37 +20,37 @@ const Banner = () => {
 
                     <Link to='/letters'>
                         <div className="banner-card letters animate__animated animate__flipInY animate__faster" style={{ animationDelay: "100ms" }}>
-                            <GrMail className='h-30 w-30 lg:h-16 lg:w-16' />
+                            <GrMail />
                         </div>
                     </Link>
 
                     <Link to='/tasks'>
                         <div className="banner-card list animate__animated animate__flipInY animate__faster " style={{ animationDelay: "400ms" }}>
-                            <FaListAlt className='h-30 w-30 lg:h-16 lg:w-16' />
+                            <FaListAlt />
                         </div>
                     </Link>
 
                     <Link to='/adventures'>
                         <div className="banner-card album animate__animated animate__flipInY animate__faster " style={{ animationDelay: "700ms" }}>
-                            <IoIosAlbums className='h-30 w-30 lg:h-16 lg:w-16 text-white' />
+                            <IoIosAlbums className='text-white' />
                         </div>
                     </Link>
 
                     <a href='https://open.spotify.com/playlist/086RjPNbhLfSCBprflmpEa?si=da1497741d374b0b' rel="noreferrer" target='_blank'>
                         <div className="banner-card spotify animate__animated animate__flipInY animate__faster " style={{ animationDelay: "1000ms" }}>
-                            <img src="./img/spotify.webp" className='  h-30 w-30 lg:h-16 lg:w-16' alt="" />
+                            <img src="./img/spotify.webp" alt="" />
                         </div>
                     </a>
 
                     <a href='https://www.tiktok.com/@user6195661253900' rel="noreferrer" target='_blank'>
                         <div className="banner-card tiktok animate__animated animate__flipInY animate__faster " style={{ animationDelay: "1300ms" }}>
-                            <img src="./img/tiktok.svg" className='h-30 w-30 lg:h-16 lg:w-16' alt="" />
+                            <img src="./img/tiktok.svg" alt="" />
                         </div>
                     </a>
 
                     <Link to='/adventures/favorites'>
                         <div className="banner-card favs animate__animated animate__flipInY animate__faster " style={{ animationDelay: "1600ms" }}>
-                            <MdFavorite className='h-30 w-30 lg:h-16 lg:w-16' />
+                            <MdFavorite />
                         </div>
                     </Link>
 

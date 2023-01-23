@@ -37,7 +37,7 @@ const AdventureModal = () => {
         handleAdventure()
     }, [])
 
-    loader ? console.log('loading') : console.log('loaded')
+    // loader ? console.log('loading') : console.log('loaded')
 
     const handleCategory = () => {
         if (adventure.category === 'fav') {
@@ -64,14 +64,14 @@ const AdventureModal = () => {
             <article className='container mx-auto flex flex-col pt-5'>
                 <h1 className='adv-detail-title'>Our Adventure</h1>
                 <div className='adv-detail-father'>
-                    <div className='adv-detail bg-white relative' >
+                    <div className='adv-detail relative' >
                         <div className='absolute top-3 right-4 flex gap-3 items-center'>
                             <a href={adventure.image?.url} target='_blank' rel='noreferrer' > <BiLinkAlt className='icon' /> </a>
                             <TbArrowBackUp className='icon2' onClick={() => navigate(-1)} />
                         </div>
                         {loader ?
                             <div className="img-modal-adv-detail flex justify-center items-center border-r-2">
-                                <span class="loader-picture"></span>
+                                <span className="loader-picture"></span>
                             </div>
                             :
                             <div className="img-modal-adv-detail border-l-2">
@@ -80,7 +80,7 @@ const AdventureModal = () => {
 
                         {loader ?
                             <div className="modal-content-adv-detail flex justify-center items-center">
-                                <span class="loader-tea"></span>
+                                <span className="loader-tea"></span>
                             </div>
                             :
                             <div className="modal-content-adv-detail flex flex-col justify-between">

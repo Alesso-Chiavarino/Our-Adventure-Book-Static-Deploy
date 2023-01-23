@@ -228,7 +228,7 @@ const Form = () => {
 
                 <div className='w-full'>
                   <label htmlFor="image" className='label-img'>Image</label>
-                  <input className="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="image" files={image} onChange={(e) => {
+                  <input className="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none" id="image" files={image} onChange={(e) => {
                     console.log(e.target.files[0])
                     setImage(e.target.files[0]);
                   }} type="file"></input>
