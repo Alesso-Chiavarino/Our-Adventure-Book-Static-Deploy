@@ -27,7 +27,7 @@ export const InputSearch = () => {
 
     return (
 
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form className='nav-input-search' onSubmit={(e) => e.preventDefault()}>
             <div className='flex items-center'>
                 <AiOutlineSearch className='relative text-gray-300 left-7 text-xl' />
                 <input type="search" className='text-gray-300 pl-8 input-search' name="" id="" value={search} placeholder='Search' onChange={handleSearch} onKeyDown={handleKey} />
