@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useSearch } from '../../context/SearchContext';
 import { useNavigate } from 'react-router-dom';
 
-export const InputSearch = () => {
+export const InputSearch = ( {handleMenu} ) => {
 
     const [search, setSearch] = useState('');
 
@@ -22,6 +22,7 @@ export const InputSearch = () => {
             getSearch(search);
             setSearch('')
             navigate('/adventures')
+            handleMenu();
         }
     }
 

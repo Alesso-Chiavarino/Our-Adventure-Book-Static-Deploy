@@ -218,7 +218,7 @@ const Form = () => {
             </div>
 
 
-            <div className='flex w-full'>
+            <div className='flex w-full date-cat-img-container'>
 
               <div className='form-left'>
                 <div className="form-group date-form">
@@ -235,7 +235,7 @@ const Form = () => {
                 </div>
               </div>
 
-              <div className='flex flex-col w-1/2 pl-10'>
+              <div className='flex flex-col w-1/2 pl-10 form-right'>
                 <span className='text-white mb-2'>Category</span>
                 <div className='flex flex-wrap'>
                   <div className="categories-container flex gap-5">

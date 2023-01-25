@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    z-index: 54556;
+    z-index: 5;
 
     .go-back-icon {
         position: relative;
@@ -23,7 +23,7 @@
         color: #ccc;
         font-size: 1.2em;
         cursor: pointer;
-        z-index: 54556;
+        z-index: 5;
 
         &:hover {
             color: #fff;
@@ -32,6 +32,7 @@
 }
 
 .card {
+    width: 50em;
     display: flex;
     background: #191c29;
     position: relative;
@@ -100,147 +101,149 @@
         text-align: center;
         font-family: mark-heavy;
     }
-}
 
-form {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.9375em;
-    border-radius: 0.375em;
-    width: fit-content;
+    form {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.9375em;
+        border-radius: 0.375em;
+        width: fit-content;
 
-    h1 {
-        color: #02f0ac;
-        font-family: mark-bold;
-        font-size: 1.6em;
-        align-self: flex-start;
-        margin-bottom: 2em;
-    }
+        h1 {
+            color: #02f0ac;
+            font-family: mark-bold;
+            font-size: 1.6em;
+            align-self: flex-start;
+            margin-bottom: 2em;
+        }
 
-    .form-group {
-        margin-bottom: 1em;
-        width: 50em;
-        margin: 0 auto;
+        .form-group {
+            margin-bottom: 1em;
+            // width: 500px;
+            width: 100%;
+            // width: 50em;
+            margin: 0 auto;
 
-        label {
+            label {
+                display: block;
+                margin-bottom: 0.5em;
+                color: #fff;
+                font-family: mark-bold;
+            }
+
+            input {
+                color: #ccc;
+                width: 100%;
+                font-size: 0.875em;
+                padding: 0.5em;
+                border: 1.5px solid rgba(255, 255, 255, .493);
+                border-radius: 0.25em;
+                background-color: transparent;
+                outline: none !important;
+                box-shadow: none !important;
+
+                &::placeholder {
+                    font-family: mark-pro-heavy;
+                    color: rgba(255, 255, 255, 0.493);
+                    font-family: mark-bold;
+
+                }
+
+                &:focus {
+                    border: 1.5px solid #02f0ac;
+                    transition: 0.3s all;
+                    box-shadow: #02f0ac 0px 0px 3px 0px;
+                }
+            }
+
+            textarea {
+                @extend input;
+                min-height: 7.5em;
+                max-height: 18.75em;
+            }
+
+            .form-control-file {
+                width: 12.5em;
+                height: 6.25em;
+                background-color: none;
+                background-color: #02f0ad93;
+            }
+
+        }
+
+        .label-img {
+            align-self: flex-start;
             display: block;
             margin-bottom: 0.5em;
             color: #fff;
             font-family: mark-bold;
         }
 
-        input {
-            color: #ccc;
-            width: 100%;
-            font-size: 0.875em;
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.3125em;
+            width: 12.5em;
             padding: 0.5em;
-            border: 1.5px solid rgba(255, 255, 255, .493);
+            border: 1.5px solid #02f0ac;
             border-radius: 0.25em;
-            background-color: transparent;
-            outline: none !important;
-            box-shadow: none !important;
+            margin-top: 1.25em;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
 
-            &::placeholder {
-                font-family: mark-pro-heavy;
-                color: rgba(255, 255, 255, 0.493);
-                font-family: mark-bold;
-
-            }
-
-            &:focus {
-                border: 1.5px solid #02f0ac;
+            &:hover {
                 transition: 0.3s all;
+                border: 1.5px solid transparent;
+                background-color: #02f0ad93;
+            }
+        }
+
+        .form-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9375em;
+            width: 50%;
+
+            .date-form {
+                @extend .form-group;
+                width: 100%;
+            }
+        }
+
+        .category-form {
+            border: 1.5px solid rgba(255, 255, 255, .493);
+            width: 2.1875em;
+            padding: 0.3125em;
+            cursor: pointer;
+            height: 2.1875em;
+            border-radius: 0.3125em;
+            color: #ccc;
+
+            &:hover {
+                border: 1.5px solid #02f0ac;
+                transition: 0.1s all;
+                color: #fff;
                 box-shadow: #02f0ac 0px 0px 3px 0px;
             }
+
+            // background-color: #2b2b2b;
         }
 
-        textarea {
-            @extend input;
-            min-height: 7.5em;
-            max-height: 18.75em;
-        }
-
-        .form-control-file {
-            width: 12.5em;
-            height: 6.25em;
-            background-color: none;
-            background-color: #02f0ad93;
-        }
-
-    }
-
-    .label-img {
-        align-self: flex-start;
-        display: block;
-        margin-bottom: 0.5em;
-        color: #fff;
-        font-family: mark-bold;
-    }
-
-    button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.3125em;
-        width: 12.5em;
-        padding: 0.5em;
-        border: 1.5px solid #02f0ac;
-        border-radius: 0.25em;
-        margin-top: 1.25em;
-        color: #fff;
-        font-weight: 700;
-        cursor: pointer;
-
-        &:hover {
-            transition: 0.3s all;
-            border: 1.5px solid transparent;
-            background-color: #02f0ad93;
-        }
-    }
-
-    .form-left {
-        display: flex;
-        flex-direction: column;
-        gap: 0.9375em;
-        width: 50%;
-
-        .date-form {
-            @extend .form-group;
-            width: 100%;
-        }
-    }
-
-    .category-form {
-        border: 1.5px solid rgba(255, 255, 255, .493);
-        width: 2.1875em;
-        padding: 0.3125em;
-        cursor: pointer;
-        height: 2.1875em;
-        border-radius: 0.3125em;
-        color: #ccc;
-
-        &:hover {
-            border: 1.5px solid #02f0ac;
+        .category-form-active {
             transition: 0.1s all;
+            width: 2.1875em;
+            padding: 0.3125em;
+            cursor: pointer;
+            height: 2.1875em;
+            border-radius: 0.3125em;
+            border: 1.5px solid #02f0ac;
             color: #fff;
             box-shadow: #02f0ac 0px 0px 3px 0px;
         }
-
-        // background-color: #2b2b2b;
-    }
-
-    .category-form-active {
-        transition: 0.1s all;
-        width: 2.1875em;
-        padding: 0.3125em;
-        cursor: pointer;
-        height: 2.1875em;
-        border-radius: 0.3125em;
-        border: 1.5px solid #02f0ac;
-        color: #fff;
-        box-shadow: #02f0ac 0px 0px 3px 0px;
     }
 }

@@ -31,6 +31,11 @@ const Navbar = () => {
   return (
     <nav className='flex w-full nav-container justify-around py-5 items-center navbar text-white'>
       <div className='offcanvas' ref={offcanvasRef}>
+        <div className='mb-5'>
+          <Brand />
+        </div>
+        <hr className='text-white w-3/4 mb-5' />
+        <InputSearch handleMenu={handleMenu} />
         <ul className='flex flex-col'>
           <li><NavLink className='link' to="/" onClick={() => {
             handleMenu()
@@ -49,15 +54,22 @@ const Navbar = () => {
         <li><NavLink className='link' to="/adventures">Adventures</NavLink></li>
         <li><NavLink className='link' to="/new" onClick={resetSearch} >New Adventure</NavLink></li>
       </ul>
-      <InputSearch />
+      <div className='search-hidden'> <InputSearch /> </div>
       <div className='hamburger' onClick={handleMenu}>
-        <div id="menuToggle">
+        {menu ? <div id="menuToggle">
           <input type="checkbox" />
           <span></span>
           <span></span>
           <span></span>
           <div></div>
-        </div>
+        </div> : <div id="menuToggleDefault">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <div></div>
+        </div>}
+
       </div>
     </nav>
   )
