@@ -201,7 +201,7 @@ const Adventures = () => {
             )
         }
         return (
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-3 gap-y-4 gap-3 md:gap-3"'>
+            <div className='grid grid-cols-2 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-3 gap-y-4"'>
                 {adventures.map((adv, i) => <Adventure setAllFilter={setAllFilter} conectToChild={conectToChild} confirm={confirm} setFavoritesFilter={setFavoritesFilter} {...adv} id={i} key={adv._id} />)}
             </div>
         )
