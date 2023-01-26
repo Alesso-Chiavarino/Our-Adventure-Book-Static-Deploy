@@ -55,7 +55,7 @@ const LettersContainer = () => {
                     </div>
                     {loader ?
                         <div className='flex justify-center items-center mt-10'>
-                            <span class="loader-letter"></span>
+                            <span className="loader-letter"></span>
                         </div>
                         :
                         <div className='grid-letters grid grid-cols-2 lg:grid-cols-3 gap-10'>
