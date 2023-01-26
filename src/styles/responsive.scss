@@ -43,7 +43,9 @@
             }
         }
     }
-    .offcanvas-open, .offcanvas {
+
+    .offcanvas-open,
+    .offcanvas {
         width: 100%;
     }
 }
@@ -108,7 +110,33 @@
 
     .adventures-section {
         padding: 20px;
+
+        aside {
+            width: 100%;
+            margin-bottom: 20px;
+        }
     }
+
+    .adv-detail {
+        .img-modal-adv-detail-loader {
+            height: 200px;
+            border-right: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .modal-content-adv-detail-loader {
+            @extend .img-modal-adv-detail-loader;
+            height: 200px !important;
+            border-bottom: none;
+            border-top: 1px solid #ccc;
+        }
+    }
+
+    .adv-detail-title {
+        margin-bottom: 20px;
+    }
+
+
 }
 
 

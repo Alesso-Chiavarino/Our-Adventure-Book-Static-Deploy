@@ -70,7 +70,7 @@ const AdventureModal = () => {
                             <TbArrowBackUp className='icon2' onClick={() => navigate(-1)} />
                         </div>
                         {loader ?
-                            <div className="img-modal-adv-detail flex justify-center items-center border-r-2">
+                            <div className="img-modal-adv-detail img-modal-adv-detail-loader flex justify-center items-center border-r-2">
                                 <span className="loader-picture"></span>
                             </div>
                             :
@@ -79,7 +79,7 @@ const AdventureModal = () => {
                             </div>}
 
                         {loader ?
-                            <div className="modal-content-adv-detail flex justify-center items-center">
+                            <div className="modal-content-adv-detail modal-content-adv-detail-loader flex justify-center items-center">
                                 <span className="loader-tea"></span>
                             </div>
                             :

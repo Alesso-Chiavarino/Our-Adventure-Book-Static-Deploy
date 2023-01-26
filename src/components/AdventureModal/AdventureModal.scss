@@ -62,7 +62,7 @@
     .modal-content-adv-detail {
         background-color: #1A1B23;
         width: 50%;
-        height: 100%;
+        height: 100% !important;
         padding: 2.5em;
 
         h3 {
@@ -88,9 +88,21 @@
         }
     }
 
+    // .img-modal-adv-detail-loader {
+    //     height: 200px;
+    //     border-right: none;
+    //     border-bottom: 1px solid #ccc;
+    // }
+    
+    // .modal-content-adv-detail-loader {
+    //     @extend .img-modal-adv-detail-loader;
+    //     border-bottom: none;
+    //     border-top: 1px solid #ccc;
+    // }
     .loader-tea {
         width: 3em;
         height: 3em;
+        // height: 100%;
         display: inline-block;
         position: relative;
         border: 4px solid #FFF;
