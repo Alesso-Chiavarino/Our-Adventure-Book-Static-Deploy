@@ -32,7 +32,7 @@ const Navbar = () => {
     <nav className='flex w-full nav-container justify-around py-5 items-center navbar text-white'>
       <div className='offcanvas' ref={offcanvasRef}>
         <div className='mb-5'>
-          <Brand />
+          <Brand handleMenu={handleMenu} />
         </div>
         <hr className='text-white w-3/4 mb-5' />
         <InputSearch handleMenu={handleMenu} />

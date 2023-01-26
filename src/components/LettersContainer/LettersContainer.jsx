@@ -43,7 +43,7 @@ const LettersContainer = () => {
             <main className='container mx-auto flex justify-center'>
                 <div>
                     <h1>Our Letters</h1>
-                    <div className='flex items-center justify-between mb-5 w-full'>
+                    <div className='btns-letter-container flex items-center justify-between mb-5 w-full'>
                         <Link to='/letters/form'>
                             <span className='flex bg-green-500 text-white rounded-md justify-center items-center text-sm  gap-1 py-1 px-2 cursor-pointer hover:bg-green-400'><IoIosCreate className='mb-1' />Write a Letter</span>
                         </Link>
@@ -58,7 +58,7 @@ const LettersContainer = () => {
                             <span class="loader-letter"></span>
                         </div>
                         :
-                        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10'>
+                        <div className='grid-letters grid grid-cols-2 lg:grid-cols-3 gap-10'>
                             {letters.docs?.map(lett => <Letter key={lett._id} id={lett._id} {...lett} deleteLetter={deleteLetter} />)}
                         </div>}
                 </div>

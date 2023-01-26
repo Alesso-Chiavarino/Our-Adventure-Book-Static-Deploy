@@ -116,7 +116,7 @@ const TasksContainer = () => {
                     <h1 className='tasks-container-title pt-5'>Our Tasks</h1>
                     <Link className='bg-green-500 rounded-full w-9 h-9 text-3xl flex items-center justify-center text-white hover:bg-green-400' to='/tasks/form'>+</Link>
                 </div>
-                <div className='flex gap-5 pt-5'>
+                <div className='task-grid flex gap-5 pt-5'>
                     <aside>
                         {isAll ? <span className=' bg-gray-50 cursor-pointer rounded-md p-1.5 flex items-center gap-2 text-gray-700' onClick={handleIsAll}><SiTodoist className='mb-1'
                         /> All</span> : <span className='text-gray-400 hover:bg-gray-50 cursor-pointer rounded-md p-1.5 flex items-center gap-2 hover:text-gray-700 ' onClick={handleIsAll}><SiTodoist className='mb-1'

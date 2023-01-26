@@ -6,6 +6,8 @@ img {
 
 .adventure {
     width: 100%;
+    // height: X;
+    height: fit-content;
     animation-name: waterfall;
     opacity: 0;
     animation-duration: 700ms;
@@ -43,6 +45,7 @@ img {
     }
 
     .adventure-middle {
+        height: 3.75em;
         p {
             font-size: 0.875em;
             font-family: mark-medium !important;

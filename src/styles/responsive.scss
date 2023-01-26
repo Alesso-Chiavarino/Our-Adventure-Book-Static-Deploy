@@ -48,11 +48,55 @@
     .offcanvas {
         width: 100%;
     }
+
+    .tasks-container {
+        padding: 20px;
+        a {
+            padding-bottom: 5px;
+        }
+    }
+
+    .task-grid {
+        // padding: 20px;
+        flex-direction: column;
+        aside {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .card-task-container {
+            margin: auto;
+            width: 100%;
+        }
+    }
+
+    .tasks-container-title {
+        margin-bottom: 20px;
+    }
+
+    .btns-letter-container {
+        gap: 30px;
+        .btns {
+            gap: 10px;
+        }
+    }
+
+    .grid-letters {
+        margin-bottom: 40px;
+        grid-template-columns: repeat(1, 1fr);
+        .letter-container {
+            width: 100%;
+        }
+    }
 }
 
 
 // `md` applies to small devices (landscape phones, less than 768px)
 @media screen and (max-width: 768px) {
+
+    .home {
+        padding: 0 20px 20px 20px;
+    }
+
     .adv-detail-father {
         .adv-detail {
             height: fit-content;
@@ -136,6 +180,9 @@
         margin-bottom: 20px;
     }
 
+    .letter-container {
+        width: 18em;
+    }
 
 }
 

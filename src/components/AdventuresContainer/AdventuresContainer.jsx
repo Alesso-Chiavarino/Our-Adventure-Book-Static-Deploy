@@ -37,7 +37,7 @@ const AdventuresContainer = () => {
                 </div>
                 <Link to='/adventures'> <span className='more-adventures px-2 h-full' onClick={() => window.scroll(0,0)} >More adventures <FaPlus className='text-gray-200 ml-1'/> </span> </Link>
             </div>
-            <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 py-6' > 
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 py-6' > 
                 {adventures.map((ad, id) => <Adventure id={id} class={ad._id} key={ad._id} {...ad} show={showModal} set={setShowModal} />)} 
             </div>
         </section>

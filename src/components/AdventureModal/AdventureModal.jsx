@@ -74,7 +74,7 @@ const AdventureModal = () => {
                                 <span className="loader-picture"></span>
                             </div>
                             :
-                            <div className="img-modal-adv-detail border-l-2">
+                            <div className="img-modal-adv-detail">
                                 <img src={adventure.image?.url} alt={adventure.title} />
                             </div>}
 
