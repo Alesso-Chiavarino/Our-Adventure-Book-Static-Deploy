@@ -33,3 +33,31 @@
         cursor: pointer;
     }
 }
+
+.loader-egg {
+    display: block;
+    position: relative;
+    width: 7em;
+    height: 10em;
+    background-color: #FFF;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform-origin: 50% 100%;
+    animation: 2s eggRot linear infinite alternate;
+  }
+  .loader-egg:after{
+    content:"";
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    width: 5em;
+    height: 5em;
+    transform: translateX(-50%);
+    background-color: #ffd900;
+    border-radius: 50% ;
+  }
+  
+  @keyframes eggRot {
+    0%{    transform: rotate(-25deg)}
+    100%{    transform: rotate(25deg)}
+  }
+        
