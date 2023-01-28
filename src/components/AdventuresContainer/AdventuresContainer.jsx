@@ -10,7 +10,7 @@ const AdventuresContainer = () => {
 
     const [showModal, setShowModal] = useState(false);
     const [loader, setLoader] = useState(true);
-    const [empty, setEmpty] = useState(false);
+    // const [empty, setEmpty] = useState(false);
 
     const { adventures, getLimitedAdventures } = useAdventure();
 
@@ -18,25 +18,22 @@ const AdventuresContainer = () => {
         const loadAdventures = async () => {
             await getLimitedAdventures(15, 1, '');
             setLoader(false);
-
-            if (adventures.length === 0) {
-                setEmpty(true);
-            }
-
         }
         loadAdventures();
+
     }, [])
 
+
     
-    if(empty) {
-        return (
-            <div className='adventures-container flex gap-5'>
-                <hr className='text-white w-full' />
-                <VscEmptyWindow className='empty-icon' />
-                <p className='text-white'>No adventures yet</p>
-            </div>
-        )
-    }
+    // if(adventures.length === 0) {
+    //     return (
+    //         <div className='adventures-container flex gap-5'>
+    //             <hr className='text-white w-full' />
+    //             <VscEmptyWindow className='empty-icon' />
+    //             <p className='text-white'>No adventures yet</p>
+    //         </div>
+    //     )
+    // }
 
 
 

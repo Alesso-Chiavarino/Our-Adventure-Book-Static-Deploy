@@ -188,6 +188,12 @@ const Adventures = () => {
                     <span className="loader-adventure"></span>
                     <span className="loader-adventure"></span>
                     <span className="loader-adventure"></span>
+                    <span className="loader-adventure"></span>
+                    <span className="loader-adventure"></span>
+                    <span className="loader-adventure"></span>
+                    <span className="loader-adventure"></span>
+                    <span className="loader-adventure"></span>
+                    <span className="loader-adventure"></span>
                 </div>
             )
         }
