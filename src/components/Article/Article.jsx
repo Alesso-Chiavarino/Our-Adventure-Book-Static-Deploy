@@ -1,11 +1,13 @@
 import { FiArrowRight, Link } from '../../import'
 import './Article.scss';
 
-const Article = ({ title }) => {
+const Article = ({ title, _id }) => {
   return (
     <div className='article'>
       <h3>{title}</h3>
-      <Link>Read More <FiArrowRight /> </Link>
+      <Link to={`/letters/detail/${_id}`} onClick={() => {
+        window.scroll(0, 0);
+      }} >Read More <FiArrowRight /> </Link>
     </div>
   )
 }
