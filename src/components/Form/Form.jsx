@@ -330,6 +330,7 @@ const Form = () => {
                   </div>
                 </div>
 
+
                 <div className='flex flex-col w-1/2 pl-10 form-right'>
                   <span className='text-white mb-2'>Category</span>
                   <div className='flex flex-wrap '>
@@ -344,6 +345,14 @@ const Form = () => {
                 </div>
 
               </div>
+
+              <div className="w-full">
+                  {/* input file to open the phone camera */}
+                  <input type="file" accept="image/*" capture="camera" onChange={(e) => {
+                    console.log(e.target.files[0])
+                    setImage(e.target.files[0]);
+                  }}/>
+                </div>
 
               {handleArea()}
               <span ref={formErrorRef} className='hidden'>The input values are incorrect <BsFillExclamationTriangleFill /></span>
