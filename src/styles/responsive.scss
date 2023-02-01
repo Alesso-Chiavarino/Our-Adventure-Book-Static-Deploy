@@ -103,7 +103,7 @@
     }
 
     .categories-container {
-        
+
         .error-message {
             right: inherit !important;
         }
@@ -159,6 +159,13 @@
                 width: 100%;
             }
         }
+
+        // .grid-letters {
+        //     .letter-container {
+        //         width: 7em !important;
+        //     }
+
+        // }
     }
 
 
@@ -183,11 +190,11 @@
     }
 
     .articles-container {
-        
+
         .articles-grid {
-            width: 100% !important; 
+            width: 100% !important;
         }
-        
+
         .image-container {
             width: 100% !important;
         }
@@ -196,7 +203,7 @@
             flex-direction: column;
         }
 
-        
+
     }
 
     .card-container {
@@ -234,10 +241,6 @@
         }
     }
 
-    .letter-container {
-        width: 18em;
-    }
-
 }
 
 
@@ -249,11 +252,9 @@
 // }
 
 
-// // `xl` applies to large devices (desktops, less than 1200px)
+// `xl` applies to large devices (desktops, less than 1200px)
 // @media screen and (max-width: 1200px) {
-//     body {
-//         font-size: 14px;
-//     }
+
 // }
 
 

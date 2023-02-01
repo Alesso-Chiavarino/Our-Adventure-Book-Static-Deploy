@@ -36,7 +36,7 @@ const LettersContainer = () => {
     return (
         <section className='letters-container-section'>
             <main className='container mx-auto flex justify-center'>
-                <div>
+                <div className='w-full'>
                     <h1>Our Letters</h1>
                     <div className='btns-letter-container flex items-center justify-between mb-5 w-full'>
                         <Link to='/letters/form'>
@@ -53,7 +53,7 @@ const LettersContainer = () => {
                             <span className="loader-letter"></span>
                         </div>
                         :
-                        <div className='grid-letters grid grid-cols-2 lg:grid-cols-3 gap-10'>
+                        <div className='grid-letters grid gap-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '>
                             {letters.docs?.map(lett => <Letter key={lett._id} id={lett._id} {...lett} deleteLetter={deleteLetter} />)}
                         </div>}
                 </div>
