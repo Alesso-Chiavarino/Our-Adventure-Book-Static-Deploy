@@ -25,6 +25,8 @@ import Brand from './components/Brand/Brand'
 import InputSearch from './components/InputSearch/InputSearch'
 import Adventure from './components/Adventure/Adventure';
 import TypeWriter from './components/TypeWriter/TypeWriter';
+import ArticlesContainer from './pages/ArticlesContainer/ArticlesContainer';
+import Article from './components/Article/Article';
 import axios from "axios";
 import { getAdventuresRequest, getAdventureRequest, createAdventureRequest, deleteAdventureRequest, updateAdventureRequest, getLimitedAdventuresRequest } from './api/adventure.api'
 import { getLettersRequest, getLetterRequest, createLetterRequest, updateLetterRequest, deleteLetterRequest } from "./api/Letter.api";
@@ -38,7 +40,7 @@ import { ThreeDots } from 'react-loader-spinner'
 import { FaTrashAlt, FaPlaneDeparture, FaBeer, FaImage, FaPlus, FaListAlt } from 'react-icons/fa'
 import { AiFillEdit, AiFillHeart, AiFillHome, AiOutlineSearch } from 'react-icons/ai'
 import { BsFillCalendarDateFill, BsFillXSquareFill, BsFillCheckSquareFill, BsFillExclamationTriangleFill } from 'react-icons/bs'
-import { MdFavorite, MdImageNotSupported, MdPhotoLibrary } from 'react-icons/md'
+import { MdFavorite, MdImageNotSupported, MdPhotoLibrary, MdArticle } from 'react-icons/md'
 import { TbArrowBackUp } from 'react-icons/tb'
 import { BiLinkAlt } from 'react-icons/bi'
 import { VscEmptyWindow } from 'react-icons/vsc'
@@ -49,6 +51,7 @@ import { RiSendPlaneFill } from 'react-icons/ri'
 import { RxUpdate, RxDoubleArrowLeft, RxDoubleArrowRight } from 'react-icons/rx'
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
 import { SiTodoist } from 'react-icons/si'
+import { FiArrowRight } from 'react-icons/fi'
 
 export {
     //react
@@ -92,6 +95,8 @@ export {
     InputSearch,
     AdventuresContainer,
     Banner,
+    ArticlesContainer,
+    Article,
     //context
     useAdventure,
     useSearch,
@@ -129,6 +134,7 @@ export {
     MdFavorite,
     MdImageNotSupported,
     MdPhotoLibrary,
+    MdArticle,
     BsFillCalendarDateFill,
     BsFillExclamationTriangleFill,
     BsFillXSquareFill,
@@ -148,6 +154,7 @@ export {
     RiSendPlaneFill,
     RxUpdate,
     SiTodoist,
+    FiArrowRight,
     //toastify
     ToastContainer,
     toast,

@@ -1,0 +1,42 @@
+.articles-container {
+
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+    .title-icon {
+        font-size: 25px;
+    }
+
+    .title {
+        font-family: mark-bold;
+        font-size: 1.125em;
+        width: 12.5em;
+        color: #f0f0f0;
+        align-self: flex-start;
+    }
+
+    .articles-grid {
+        width: 50%;
+    }
+
+    .more-articles {
+        color: #fff;
+        display: flex;
+        font-size: 0.875em;
+        font-family: mark-bold;
+        justify-content: center;
+        align-items: center;
+        background-color: #5295CB;
+        border-radius: 5px;
+        
+        &:hover {
+            background-color: #5295cbd2;
+            cursor: pointer;
+        }
+    }
+
+    .image-container {
+        width: 50%;
+        background-color: #5295CB;
+    }
+}

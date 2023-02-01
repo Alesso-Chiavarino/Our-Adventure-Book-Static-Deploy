@@ -1,12 +1,46 @@
 .adventures-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 
     .empty-icon {
         font-size: 6.25em;
         color: rgb(255, 255, 255);
+    }
+
+    .loader-adventure {
+        height: 295px;
+        display: block;
+        margin-bottom: 30px;
+        position: relative;
+        background: rgb(0, 0, 0);
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid #333
+    }
+
+    .loader-adventure::after {
+        content: '';
+        width: calc(100% - 30px);
+        height: calc(100% - 15px);
+        top: 15px;
+        left: 15px;
+        position: absolute;
+        background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.281) 50%, transparent 100%),
+            linear-gradient(#333333 100px, transparent 0),
+            linear-gradient(#333333 100px, transparent 0),
+            linear-gradient(#333333 200px, transparent 0);
+        background-repeat: no-repeat;
+        background-size: 75px 262px, 100% 100px, 100% 20px, 100% 120px;
+        background-position: -185px 0, center 0, center 115px, center 142px;
+        box-sizing: border-box;
+        animation: animloader 1s linear infinite;
+    }
+
+    @keyframes animloader {
+        to {
+            background-position: 185px 0, center 0, center 115px, center 142px;
+        }
     }
 }
 
@@ -16,6 +50,10 @@
     width: 12.5em;
     color: #f0f0f0;
     align-self: flex-start;
+}
+
+.title-icon {
+    font-size: 25px;
 }
 
 .more-adventures {
@@ -43,9 +81,10 @@
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     transform-origin: 50% 100%;
     animation: 2s eggRot linear infinite alternate;
-  }
-  .loader-egg:after{
-    content:"";
+}
+
+.loader-egg:after {
+    content: "";
     position: absolute;
     left: 50%;
     bottom: 15%;
@@ -53,11 +92,15 @@
     height: 5em;
     transform: translateX(-50%);
     background-color: #ffd900;
-    border-radius: 50% ;
-  }
-  
-  @keyframes eggRot {
-    0%{    transform: rotate(-25deg)}
-    100%{    transform: rotate(25deg)}
-  }
-        
+    border-radius: 50%;
+}
+
+@keyframes eggRot {
+    0% {
+        transform: rotate(-25deg)
+    }
+
+    100% {
+        transform: rotate(25deg)
+    }
+}

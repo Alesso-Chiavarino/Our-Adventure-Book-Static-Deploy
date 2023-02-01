@@ -1,4 +1,4 @@
-import { AdventuresContainer, Banner } from '../../import';
+import { AdventuresContainer, Banner, ArticlesContainer } from '../../import';
 import './Home.scss';
 
 const Home = () => {
@@ -8,6 +8,7 @@ const Home = () => {
             <main className='container'>
                 <Banner />
                 <AdventuresContainer />
+                <ArticlesContainer />
             </main>
 
         </section>

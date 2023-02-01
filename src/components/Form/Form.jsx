@@ -35,11 +35,7 @@ const Form = () => {
   const expresions = {
     title: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     description: /^[a-zA-ZÀ-ÿ\s]{1,500}$/, // Letras y espacios, pueden llevar acentos, hasta 500.
-    // date: /^(0[1-9]|[1-2]\d|3[01])(\/)(0[1-9]|1[012])\2(\d{4})$/, // Letras y espacios, pueden llevar acentos, hasta 500.
-    // date: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    // date: /^(0[1-9]|1[0-2])\/(0[1-9]|[1-2][0-9]|3[0-1])\/\d{4}$/
-
-
+    date: /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/,
   }
 
   const handleTravel = () => {
@@ -142,7 +138,7 @@ const Form = () => {
   const handleDate = (e) => {
     setDate(e.target.value);
 
-    if (date != '') {
+    if (expresions.date.test(date)) {
       setDateValidation(true);
       dateRef.current.className = 'hidden'
     } else {
@@ -347,12 +343,12 @@ const Form = () => {
               </div>
 
               <div className="w-full">
-                  {/* input file to open the phone camera */}
-                  <input type="file" accept="image/*" capture="camera" onChange={(e) => {
-                    console.log(e.target.files[0])
-                    setImage(e.target.files[0]);
-                  }}/>
-                </div>
+                {/* input file to open the phone camera */}
+                <input type="file" accept="image/*" capture="camera" onChange={(e) => {
+                  console.log(e.target.files[0])
+                  setImage(e.target.files[0]);
+                }} />
+              </div>
 
               {handleArea()}
               <span ref={formErrorRef} className='hidden'>The input values are incorrect <BsFillExclamationTriangleFill /></span>

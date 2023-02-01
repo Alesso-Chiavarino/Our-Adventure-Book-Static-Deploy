@@ -182,7 +182,22 @@
         }
     }
 
+    .articles-container {
+        
+        .articles-grid {
+            width: 100%;
+        }
+        
+        .image-container {
+            width: 100%;
+        }
 
+        .grid-container {
+            flex-direction: column;
+        }
+
+        
+    }
 
     .card-container {
         .card {
