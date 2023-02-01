@@ -11,14 +11,12 @@ const AdventuresContainer = () => {
 
     useEffect(() => {
         const loadAdventures = async () => {
-            await getLimitedAdventures(15, 1, '');
+            await getLimitedAdventures(10, 1, '');
             setLoader(false);
         }
         loadAdventures();
 
     }, [])
-
-
 
     // if(adventures.length === 0) {
     //     return (
@@ -29,8 +27,6 @@ const AdventuresContainer = () => {
     //         </div>
     //     )
     // }
-
-
 
     return (
         <section className='adventures-container' onClick={() => setShowModal(false)} >
