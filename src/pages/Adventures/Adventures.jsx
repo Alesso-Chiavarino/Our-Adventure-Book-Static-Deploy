@@ -168,7 +168,7 @@ const Adventures = () => {
     const loadAdventures = () => {
         if (loader) {
             return (
-                <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-3 gap-y-4 md:gap-y-0 md:gap-3"'>
+                <div className='grid grid-cols-2 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-3 gap-y-4"'>
                     <span className="loader-adventure"></span>
                     <span className="loader-adventure"></span>
                     <span className="loader-adventure"></span>

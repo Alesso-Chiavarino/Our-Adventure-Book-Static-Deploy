@@ -11,7 +11,7 @@
     }
 
     .loader-adventure {
-        width: 215px;
+        // width: 215px;
         height: 295px;
         display: block;
         margin-bottom: 30px;
@@ -19,7 +19,7 @@
         background: rgb(0, 0, 0);
         box-sizing: border-box;
         border-radius: 5px;
-        border: 1px solid #333
+        border: 1px solid #333;
     }
     
     .loader-adventure::after {

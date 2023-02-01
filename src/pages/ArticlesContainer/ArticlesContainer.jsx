@@ -1,19 +1,28 @@
 import './ArticlesContainer.scss';
-import { MdArticle, Link, FaPlus, Article, useLetter, useEffect } from '../../import'
+import { MdArticle, Link, FaPlus, Article, useLetter, useEffect, useState } from '../../import'
 
 
 const ArticlesContainer = () => {
 
     const { getLetters, letters } = useLetter()
+    const [loader, setLoader] = useState(true);
 
     useEffect(() => {
         const loadArticles = async () => {
-            await getLetters()
+            try {
+                await getLetters()
+            }
+            catch (error) {
+                console.log(error)
+            }
+            finally {
+                setLoader(false);
+            }
         }
         loadArticles();
     }, [])
 
-    console.log(letters.docs)
+    let timer = 100;
 
     return (
         <section className='articles-container'>
@@ -25,9 +34,24 @@ const ArticlesContainer = () => {
                 <Link to='/letters'> <span className='more-articles px-2 h-full' onClick={() => window.scroll(0, 0)} >More articles <FaPlus className='text-gray-200 ml-1' /> </span> </Link>
             </div>
             <div className='mt-5 flex gap-5 grid-container'>
-                <div className="articles-grid grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    {letters.docs?.map(art => <Article key={art._id} {...art} />)}
-                </div>
+                {loader ?
+                    <div className="articles-grid grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <span className='loader-article'></span>
+                        <span className='loader-article'></span>
+                        <span className='loader-article'></span>
+                        <span className='loader-article'></span>
+                        <span className='loader-article'></span>
+                        <span className='loader-article'></span>
+                    </div>
+                    :
+                    <div className="articles-grid grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        {letters.docs?.map(art => {
+
+                            timer += 300;
+                            return <Article key={art._id} {...art} timer={timer} />
+                            
+                        })}
+                    </div>}
                 <div className="image-container flex justify-center items-center">
                     <img src="./img/letter.svg" alt="" />
                 </div>
