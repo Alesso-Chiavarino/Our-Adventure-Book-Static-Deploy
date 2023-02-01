@@ -1,10 +1,8 @@
+import { useAdventure, useNavigate, useLocation, FaTrashAlt, AiFillEdit, MdFavorite, ToastContainer } from '../../import'
 import './Adventure.scss';
-import { useAdventure } from '../../context/AdventureContext';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { FaTrashAlt } from 'react-icons/fa'
-import { AiFillEdit } from 'react-icons/ai'
-import { MdFavorite } from 'react-icons/md'
+import 'react-toastify/dist/ReactToastify.css';
 import 'animate.css';
+
 
 const Adventure = ({ title, description, _id, image, date, id, category, setAllFilter, setFavoritesFilter }) => {
 
@@ -72,43 +70,46 @@ const Adventure = ({ title, description, _id, image, date, id, category, setAllF
   const renderMain = () => {
     if (pathname === '/adventures') {
       return (
-        <div className='adventure rounded-md h-full' style={{ animationDelay: `${delay}ms` }}
-          onClick={() => {
-            window.scroll(0, 0);
-            navigate(`/detail/${_id}`)
-          }}>
-          <div className='absolute top-2 left-2'>
-            {category === 'fav' ? <MdFavorite className='text-red-600 cursor-pointer text-lg trash' onClick={(e) => {
-              e.stopPropagation();
-              handleFav()
-            }} /> : <MdFavorite className='text-white cursor-pointer text-lg trash' onClick={(e) => {
-              e.stopPropagation();
-              handleFav()
-            }} />}
-          </div>
-          <div className="adventure-icons absolute gap-5 flex right-2 top-2">
-            <AiFillEdit className='text-white cursor-pointer edit' onClick={(e) => {
-              e.stopPropagation();
-              window.scroll(0, 50);
-              navigate(`/new/${_id}`)
-            }} />
-            <FaTrashAlt className='text-white cursor-pointer trash' onClick={(e) => {
-              e.stopPropagation();
-              deleteAdventure(_id)
-            }} />
-          </div>
+        <article>
+          <div className='adventure rounded-md h-full' style={{ animationDelay: `${delay}ms` }}
+            onClick={() => {
+              window.scroll(0, 0);
+              navigate(`/detail/${_id}`)
+            }}>
+            <div className='absolute top-2 left-2'>
+              {category === 'fav' ? <MdFavorite className='text-red-600 cursor-pointer text-lg trash' onClick={(e) => {
+                e.stopPropagation();
+                handleFav()
+              }} /> : <MdFavorite className='text-white cursor-pointer text-lg trash' onClick={(e) => {
+                e.stopPropagation();
+                handleFav()
+              }} />}
+            </div>
+            <div className="adventure-icons absolute gap-5 flex right-2 top-2">
+              <AiFillEdit className='text-white cursor-pointer edit' onClick={(e) => {
+                e.stopPropagation();
+                window.scroll(0, 50);
+                navigate(`/new/${_id}`)
+              }} />
+              <FaTrashAlt className='text-white cursor-pointer trash' onClick={(e) => {
+                e.stopPropagation();
+                deleteAdventure(_id)
+              }} />
+            </div>
 
-          {image && <img className='adv-img' src={image.url} alt={title} />}
-          <div className="flex flex-col justify-between p-3 gap-3">
-            <h3 className='text-gray-300 text-center'>{title}</h3>
+            {image && <img className='adv-img' src={image.url} alt={title} />}
+            <div className="flex flex-col justify-between p-3 gap-3">
+              <h3 className='text-gray-300 text-center'>{title}</h3>
+            </div>
+            <div className="adventure-middle px-3 pb-3">
+              <p className='text-gray-500 '>{limitedDescription}...</p>
+            </div>
+            <div className='adventure-bottom'>
+              <p className=''>{date}</p>
+            </div>
           </div>
-          <div className="adventure-middle px-3 pb-3">
-            <p className='text-gray-500 '>{limitedDescription}...</p>
-          </div>
-          <div className='adventure-bottom'>
-            <p className=''>{date}</p>
-          </div>
-        </div>
+          <ToastContainer />
+        </article>
       )
     } else {
       return (

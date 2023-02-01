@@ -1,10 +1,5 @@
-import { useAdventure } from '../../context/AdventureContext';
-import Adventure from '../Adventure/Adventure';
-import { VscEmptyWindow } from 'react-icons/vsc'
-import { useState, useEffect } from 'react';
+import { useAdventure, Adventure, VscEmptyWindow, useState, useEffect, FaImage, FaPlus, Link } from '../../import'
 import './AdventuresContainer.scss';
-import { FaImage, FaPlus } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 const AdventuresContainer = () => {
 
@@ -24,7 +19,7 @@ const AdventuresContainer = () => {
     }, [])
 
 
-    
+
     // if(adventures.length === 0) {
     //     return (
     //         <div className='adventures-container flex gap-5'>

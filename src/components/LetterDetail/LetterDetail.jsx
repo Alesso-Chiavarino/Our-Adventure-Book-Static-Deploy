@@ -1,8 +1,5 @@
 import './LetterDetail.scss';
-import { useEffect, useState } from 'react';
-import { useLetter } from '../../context/LetterContext';
-import { useNavigate, useParams } from 'react-router-dom';
-import { TbArrowBackUp } from 'react-icons/tb'
+import { useEffect, useState, useNavigate, useParams, TbArrowBackUp, useLetter } from '../../import'
 
 const LetterDetail = () => {
 

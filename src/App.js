@@ -1,22 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import NotFound from "./pages/NotFound/NotFound";
-import Form from "./components/Form/Form";
-import AdventureProvider from "./context/AdventureContext";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import Adventures from "./pages/Adventures/Adventures";
-import SearchProvider from "./context/SearchContext";
-import AdventureModal from "./components/AdventureModal/AdventureModal";
-import TasksContainer from "./components/TasksContainer/TasksContainer";
-import TaskProvider from "./context/TaskContext";
-import TaskForm from "./components/TaskForm/TaskForm";
-import TaskDetail from "./components/TaskDetail/TaskDetail";
-import LettersContainer from "./components/LettersContainer/LettersContainer";
-import LetterProvider from "./context/LetterContext";
-import LetterDetail from "./components/LetterDetail/LetterDetail";
-import LetterForm from "./components/LetterForm/LetterForm";
 import './styles/responsive.scss';
+import { AdventureModal, AdventureProvider, Adventures, BrowserRouter, Footer, Form, Home, LetterDetail, LetterForm, LetterProvider, LettersContainer, Navbar, NotFound, Route, Routes, SearchProvider, TaskDetail, TaskForm, TaskProvider, TasksContainer } from './import';
 
 const App = () => {
   return (

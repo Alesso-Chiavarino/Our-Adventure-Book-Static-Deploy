@@ -1,5 +1,5 @@
-import { useContext, createContext, useState } from "react"
-import { getTasksRequest, getTaskRequest, createTaskRequest, updateTaskRequest, deleteTaskRequest } from "../api/Task.api"
+import { useContext, createContext, useState, getTasksRequest, getTaskRequest, createTaskRequest, updateTaskRequest, deleteTaskRequest, toast } from "../import"
+
 
 const TaskContext = createContext()
 
@@ -33,7 +33,7 @@ const TaskProvider = ({ children }) => {
 
     const updateTask = async (id, task, isDone) => {
         await updateTaskRequest(id, task);
-        if(isDone || !isDone) {
+        if (isDone || !isDone) {
             const tasks = await getTasksRequest(isDone, 1);
             return setTasks(tasks.data);
         }
@@ -46,6 +46,16 @@ const TaskProvider = ({ children }) => {
         await deleteTaskRequest(id);
         const newTasks = await getTasksRequest(isDone, 1);
         setTasks(newTasks.data)
+        toast('Task deleted successfully', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
     }
 
     return (

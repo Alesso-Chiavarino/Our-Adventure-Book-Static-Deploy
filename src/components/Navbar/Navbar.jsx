@@ -1,9 +1,5 @@
-import Brand from '../Brand/Brand';
+import { Brand, NavLink, InputSearch, useSearch, useRef, useState } from '../../import'
 import './Navbar.scss';
-import { NavLink } from 'react-router-dom';
-import InputSearch from '../InputSearch/InputSearch';
-import { useSearch } from '../../context/SearchContext';
-import { useRef, useState } from 'react';
 
 const Navbar = () => {
 
@@ -29,7 +25,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className='flex w-full nav-container justify-around py-5 items-center navbar text-white'>
+    <nav className='flex w-full navbar justify-around py-5 items-center text-white'>
       <div className='offcanvas' ref={offcanvasRef}>
         <div className='mb-5'>
           <Brand handleMenu={handleMenu} />

@@ -1,24 +1,27 @@
+// import { AiOutlineSearch, useState, useSearch, useNavigate } from '../../import'
+// import './InputSearch.scss';
+
 import './InputSearch.scss';
 import { AiOutlineSearch } from 'react-icons/ai'
 import { useState } from 'react';
 import { useSearch } from '../../context/SearchContext';
 import { useNavigate } from 'react-router-dom';
 
-export const InputSearch = ( {handleMenu} ) => {
+export const InputSearch = ({ handleMenu }) => {
 
     const [search, setSearch] = useState('');
 
-    const {getSearch} = useSearch();
+    const { getSearch } = useSearch();
 
     const navigate = useNavigate();
 
-    const handleSearch= (e) => {
+    const handleSearch = (e) => {
         const value = e.target.value;
         setSearch(value);
     }
 
     const handleKey = (e) => {
-        if(e.keyCode === 13) {
+        if (e.keyCode === 13) {
             getSearch(search);
             setSearch('')
             navigate('/adventures')

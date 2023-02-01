@@ -1,19 +1,11 @@
+import { FaPlaneDeparture, MdFavorite, MdPhotoLibrary, AiFillHome, FaBeer, useAdventure, Adventure, RxDoubleArrowLeft, RxDoubleArrowRight, useEffect, useSearch, useParams, useRef, useState } from '../../import'
 import './Adventures.scss';
-import { FaPlaneDeparture } from 'react-icons/fa';
-import { MdFavorite, MdPhotoLibrary } from 'react-icons/md'
-import { AiFillHome } from 'react-icons/ai';
-import { FaBeer } from 'react-icons/fa';
-import { useAdventure } from '../../context/AdventureContext';
-import Adventure from '../../components/Adventure/Adventure';
-import { RxDoubleArrowLeft, RxDoubleArrowRight } from 'react-icons/rx';
-import { useEffect, useState, useRef } from 'react';
-import { useSearch } from '../../context/SearchContext';
-import { useParams } from 'react-router-dom';
 
 const Adventures = () => {
 
     const { adventures, data, getLimitedAdventures, confirm, handleConfirm, changeAdventuresState } = useAdventure();
-    const [page, setPage] = useState(1)
+    const { search } = useSearch();
+
     const previusRef = useRef(null);
     const nextRef = useRef(null);
 
@@ -24,11 +16,9 @@ const Adventures = () => {
     const [partyFilter, setPartyFilter] = useState(false);
     const [loader, setLoader] = useState(true);
 
-    const { search } = useSearch();
-
     const { fav } = useParams();
 
-    const handleAllFilter = async (search) => {
+    const handleAllFilter = async () => {
         try {
             changeAdventuresState([])
             setLoader(true)
@@ -37,7 +27,6 @@ const Adventures = () => {
             setFavoritesFilter(false)
             setHomeFilter(false)
             setPartyFilter(false)
-            setPage(1);
             await getLimitedAdventures(12, 1, '')
         }
         catch (error) {
@@ -158,9 +147,7 @@ const Adventures = () => {
             }
         }
         loadAdventures()
-    }, [page, search, fav])
-
-    // console.log(data.hasNextPage)
+    }, [search, fav])
 
     const handleNextPage = async () => {
         if (data.hasNextPage) {

@@ -1,10 +1,6 @@
+import { TypeWriter, GrMail, MdFavorite, IoIosAlbums, FaListAlt, Link } from '../../import'
 import './Banner.scss';
-import TypeWriter from '../TypeWriter/TypeWriter';
-import { GrMail } from 'react-icons/gr'
-import { MdFavorite } from 'react-icons/md'
-import { IoIosAlbums } from 'react-icons/io'
-import { FaListAlt } from 'react-icons/fa'
-import { Link } from 'react-router-dom';
+
 
 const Banner = () => {
 

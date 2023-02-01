@@ -1,17 +1,17 @@
-import { Typewriter } from 'react-simple-typewriter'
+import { Typewriter } from '../../import'
 
 const TypeWriter = () => {
 
   return (
-          <Typewriter
-            words={['Always', 'Siempre', 'Sempre', 'Toujours', 'Alltid', 'Immer', 'Uvijek', 'πάντοτε']}
-            loop={Infinity}
-            cursor
-            cursorStyle='|'
-            typeSpeed={100}
-            deleteSpeed={50}
-            delaySpeed={2000}
-          />
+    <Typewriter
+      words={['Always', 'Siempre', 'Sempre', 'Toujours', 'Alltid', 'Immer', 'Uvijek', 'πάντοτε']}
+      loop={Infinity}
+      cursor
+      cursorStyle='|'
+      typeSpeed={100}
+      deleteSpeed={50}
+      delaySpeed={2000}
+    />
   )
 
 }

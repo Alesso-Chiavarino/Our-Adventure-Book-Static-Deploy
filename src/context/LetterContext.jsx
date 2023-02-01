@@ -1,5 +1,5 @@
-import { useContext, createContext, useState } from "react";
-import { getLettersRequest, getLetterRequest, createLetterRequest, updateLetterRequest, deleteLetterRequest } from "../api/Letter.api";
+import { useContext, createContext, useState, getLetterRequest, createLetterRequest, updateLetterRequest, getLettersRequest, deleteLetterRequest, toast } from '../import'
+
 
 const LetterContext = createContext();
 
@@ -36,6 +36,16 @@ export const LetterProvider = ({ children }) => {
         await deleteLetterRequest(id)
         const letters = await getLettersRequest(1);
         setLetters(letters.data);
+        toast('Letter deleted successfully', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
     }
 
     return (

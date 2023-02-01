@@ -213,6 +213,28 @@
             .date-form {
                 @extend .form-group;
                 width: 100%;
+
+                .date-cont {
+                    position: relative;
+
+                    input {
+                        color: #fff;
+
+                        &::-webkit-calendar-picker-indicator {
+                            cursor: pointer;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            color: transparent;
+                            background: 0 0;
+                            margin: 0;
+                            opacity: 0;
+                            pointer-events: auto;
+                        }
+                    }
+                }
             }
         }
 
@@ -245,6 +267,30 @@
             border: 1.5px solid #02f0ac;
             color: #fff;
             box-shadow: #02f0ac 0px 0px 3px 0px;
+        }
+
+        .error-message {
+            // display: block;
+            margin-top: 5px ;
+            bottom: 2;
+            right: 0;
+            position: absolute;
+            text-align: right;
+            font-size: 12px;
+            // color: #ccc; 
+            color: #ff5252;
+            font-family: mark-bold;
+        }
+
+        .fatal-error-message {
+            color: #ff5252;
+            font-family: mark-bold;
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
     }
 }

@@ -1,9 +1,5 @@
 import './Letter.scss';
-import { useRef } from 'react';
-import { FaTrashAlt } from 'react-icons/fa'
-import { AiFillEdit } from 'react-icons/ai'
-import { IoIosOpen } from 'react-icons/io'
-import { useNavigate } from 'react-router-dom';
+import { useRef, AiFillEdit, IoIosOpen, useNavigate, ToastContainer, FaTrashAlt } from '../../import'
 
 
 const Letter = ({ title, _id, deleteLetter }) => {
@@ -54,6 +50,7 @@ const Letter = ({ title, _id, deleteLetter }) => {
                     </div>
                 </span>
             </div>
+            <ToastContainer />
         </article>
     )
 }

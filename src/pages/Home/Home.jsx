@@ -1,6 +1,5 @@
+import { AdventuresContainer, Banner } from '../../import';
 import './Home.scss';
-import AdventuresContainer from '../../components/AdventuresContainer/AdventuresContainer';
-import Banner from '../../components/Banner/Banner';
 
 const Home = () => {
 

@@ -1,7 +1,5 @@
-import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
+import { ImCheckboxUnchecked, ImCheckboxChecked, useState, useNavigate, ToastContainer } from '../../import'
 import './Task.scss';
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 
 
 const Task = ({ title, description, updateTask, _id, done, deleteTask, isDone, isPending, getTasks, isAll }) => {
@@ -48,7 +46,7 @@ const Task = ({ title, description, updateTask, _id, done, deleteTask, isDone, i
     return (
         <article className='mb-3 bg-green-400 task cursor-pointer' onClick={() => {
             navigate(`/tasks/detail/${_id}`);
-            window.scroll(0,0);
+            window.scroll(0, 0);
         }}>
             <div className='task-body h-full'>
                 <div className='top h-1/4 p-3'>
@@ -76,6 +74,7 @@ const Task = ({ title, description, updateTask, _id, done, deleteTask, isDone, i
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </article>
     )
 }

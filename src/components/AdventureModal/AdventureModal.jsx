@@ -1,14 +1,6 @@
+import { useAdventure, useEffect, useState, useParams, useNavigate, BsFillCalendarDateFill, FaPlaneDeparture, MdFavorite, MdImageNotSupported, AiFillHome, FaBeer, TbArrowBackUp, BiLinkAlt, Link, AiFillEdit } from '../../import'
 import './AdventureModal.scss';
-import { useAdventure } from '../../context/AdventureContext';
-import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { BsFillCalendarDateFill } from 'react-icons/bs'
-import { FaPlaneDeparture } from 'react-icons/fa';
-import { MdFavorite, MdImageNotSupported } from 'react-icons/md'
-import { AiFillHome } from 'react-icons/ai';
-import { FaBeer } from 'react-icons/fa';
-import { TbArrowBackUp } from 'react-icons/tb'
-import { BiLinkAlt } from 'react-icons/bi'
+
 
 const AdventureModal = () => {
 
@@ -66,6 +58,7 @@ const AdventureModal = () => {
                 <div className='adv-detail-father'>
                     <div className='adv-detail relative' >
                         <div className='absolute top-3 right-4 flex gap-3 items-center'>
+                            <Link to={`/new/${id}`}> <AiFillEdit className='icon'/> </Link>
                             <a href={adventure.image?.url} target='_blank' rel='noreferrer' > <BiLinkAlt className='icon' /> </a>
                             <TbArrowBackUp className='icon2' onClick={() => navigate(-1)} />
                         </div>

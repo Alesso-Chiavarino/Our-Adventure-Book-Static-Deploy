@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from "react";
-import { getAdventuresRequest, getAdventureRequest, createAdventureRequest, deleteAdventureRequest, updateAdventureRequest, getLimitedAdventuresRequest } from '../api/adventure.api'
+import { createContext, useContext, useState, getAdventureRequest, getAdventuresRequest, createAdventureRequest, deleteAdventureRequest, updateAdventureRequest, getLimitedAdventuresRequest, toast } from '../import'
+
 
 const AdventureContext = createContext();
 
@@ -38,6 +38,16 @@ const AdventureProvider = ({ children }) => {
     const deleteAdventure = (id) => {
         deleteAdventureRequest(id)
         setAdventures(adventures.filter(adventure => adventure._id !== id))
+        toast('Adventure deleted successfully', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
     }
 
     const getAdventure = async (id) => {

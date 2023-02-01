@@ -1,12 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useAdventure } from '../../context/AdventureContext';
+import { useState, useEffect, useParams, useNavigate, RiSendPlaneFill, ThreeDots, RxUpdate, TbArrowBackUp, useTask } from '../../import'
 import './TaskForm.scss';
-import { useParams, useNavigate } from 'react-router-dom';
-import { RiSendPlaneFill } from 'react-icons/ri'
-import { ThreeDots } from 'react-loader-spinner'
-import { RxUpdate } from 'react-icons/rx'
-import { TbArrowBackUp } from 'react-icons/tb'
-import { useTask } from '../../context/TaskContext';
 
 const TaskForm = () => {
 
@@ -151,7 +144,9 @@ const TaskForm = () => {
                             <div className='form-left'>
                                 <div className="form-group date-form">
                                     <label htmlFor="name">Date</label>
-                                    <input type="text" className="form-control" id="name" value={date} placeholder='Type a date...' onChange={handleDate} />
+                                    <div className='date-cont relative'>
+                                        <input type="date" className="form-control" id="name" value={date} onChange={handleDate} />
+                                    </div>
                                 </div>
 
                             </div>

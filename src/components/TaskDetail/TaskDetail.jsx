@@ -1,9 +1,6 @@
 import './TaskDetail.scss';
-import { useEffect, useState } from 'react';
-import { useTask } from '../../context/TaskContext';
-import { useParams } from 'react-router-dom';
-import { TbArrowBackUp } from 'react-icons/tb'
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState, useTask, useParams, TbArrowBackUp, useNavigate } from '../../import'
+
 
 const TaskDetail = () => {
 

@@ -1,10 +1,5 @@
-import { useLetter } from '../../context/LetterContext';
-import Letter from '../Letter/Letter';
+import { useLetter, Letter, useEffect, useState, IoIosCreate, RxDoubleArrowLeft, RxDoubleArrowRight, Link } from '../../import'
 import './LettersContainer.scss';
-import { useEffect, useState } from 'react';
-import { IoIosCreate } from 'react-icons/io'
-import { RxDoubleArrowLeft, RxDoubleArrowRight } from 'react-icons/rx';
-import { Link } from 'react-router-dom';
 
 const LettersContainer = () => {
 

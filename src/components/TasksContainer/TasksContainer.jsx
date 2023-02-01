@@ -1,11 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useTask } from '../../context/TaskContext';
-import Task from '../Task/Task';
-import { SiTodoist } from 'react-icons/si'
+import { useEffect, useState, useTask, SiTodoist, BsFillXSquareFill, BsFillCheckSquareFill, Link, RxDoubleArrowLeft, RxDoubleArrowRight } from '../../import'
 import './TasksContainer.scss';
-import { BsFillXSquareFill, BsFillCheckSquareFill } from 'react-icons/bs'
-import { Link } from 'react-router-dom';
-import { RxDoubleArrowLeft, RxDoubleArrowRight } from 'react-icons/rx';
+
+import Task from '../Task/Task';
 
 const TasksContainer = () => {
 
