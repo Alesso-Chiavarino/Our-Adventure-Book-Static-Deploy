@@ -6,12 +6,16 @@ const AdventuresContainer = () => {
     const [showModal, setShowModal] = useState(false);
     const [loader, setLoader] = useState(true);
 
-    const { adventures, getLimitedAdventures } = useAdventure();
+    const { adventuresHome, getLimitedAdventures } = useAdventure();
 
     useEffect(() => {
         const loadAdventures = async () => {
-            await getLimitedAdventures(10, 1, '');
-            setLoader(false);
+            if (!adventuresHome.length) {
+                await getLimitedAdventures(10, 1, '');
+                setLoader(false);
+            } else {
+                setLoader(false);
+            }
         }
         loadAdventures();
 
@@ -34,7 +38,7 @@ const AdventuresContainer = () => {
                 </div>
             )
         }
-        if (adventures.length === 0) {
+        if (adventuresHome.length === 0) {
             return (
                 <div className='adventures-container flex gap-5'>
                     <hr className='text-white w-full' />
@@ -45,7 +49,7 @@ const AdventuresContainer = () => {
         }
         return (
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 py-6' >
-                {adventures.map((ad, id) => <Adventure id={id} class={ad._id} key={ad._id} {...ad} show={showModal} set={setShowModal} />)}
+                {adventuresHome.map((ad, id) => <Adventure id={id} class={ad._id} key={ad._id} {...ad} show={showModal} set={setShowModal} />)}
             </div>
         )
     }

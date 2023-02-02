@@ -342,13 +342,12 @@ const Form = () => {
 
               </div>
 
-              <div className="w-full">
-                {/* input file to open the phone camera */}
+              {/* <div className="w-full">
                 <input type="file" accept="image/*" capture="camera" onChange={(e) => {
                   console.log(e.target.files[0])
                   setImage(e.target.files[0]);
                 }} />
-              </div>
+              </div> */}
 
               {handleArea()}
               <span ref={formErrorRef} className='hidden'>The input values are incorrect <BsFillExclamationTriangleFill /></span>

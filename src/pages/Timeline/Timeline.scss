@@ -1,11 +1,33 @@
 .timeline-section {
     min-height: 100vh;
     background-color: #0E0E0E;
-}
 
-.vertical-timeline--two-columns .vertical-timeline-element-content, .vertical-timeline-element-content {
-    padding: 0 !important;
-    box-shadow: none !important;
-    background: none !important;
-}
+    .loader-timeline {
+        width: 25px;
+        height: 100%;
+        position: relative;
+        max-width: 1200px;
+        transform: rotate(180deg);
+        -webkit-mask:
+            radial-gradient(circle closest-side, #fff 94%, #0000) 0 0/100% 25%,
+            linear-gradient(#fff 0 0) center/calc(100% - 12px) calc(100% - 12px) no-repeat;
+        mask:
+            radial-gradient(circle closest-side, #fff 94%, #0000) 0 0/100% 25%,
+            linear-gradient(#fff 0 0) center/calc(100% - 12px) calc(100% - 12px) no-repeat;
+        background: linear-gradient(#00a98f 0 0) top/100% 0% no-repeat #fff;
+        animation: bblprg 1s infinite linear;
+    }
 
+    @keyframes bblprg {
+        100% {
+            background-size: 100% 100%
+        }
+    }
+
+    .vertical-timeline--two-columns .vertical-timeline-element-content,
+    .vertical-timeline-element-content {
+        padding: 0 !important;
+        box-shadow: none !important;
+        background: none !important;
+    }
+}

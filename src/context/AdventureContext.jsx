@@ -10,6 +10,8 @@ export const useAdventure = () => {
 const AdventureProvider = ({ children }) => {
 
     const [adventures, setAdventures] = useState([]);
+    const [adventuresHome, setAdventuresHome] = useState([])
+    const [adventuresTimeline, setAdventuresTimeline] = useState([]);
     const [data, setData] = useState({});
 
     const changeAdventuresState = (adventures) => {
@@ -24,20 +26,22 @@ const AdventureProvider = ({ children }) => {
     const getLimitedAdventures = async (limit, page, search) => {
         const result = await getLimitedAdventuresRequest(limit, page, search)
         const data = result.data
+        if (limit === 10) {
+            return setAdventuresHome(result.data.docs);
+        }
         setAdventures(result.data.docs)
         setData(data);
     }
 
     const getTotalAdventures = async () => {
         const orderedAdventures = await getTotalAventuresRequest()
-        setAdventures(orderedAdventures.data);
+        // console.log(orderedAdventures)
+        setAdventuresTimeline(orderedAdventures.data);
     }
 
     const createAdventure = async (data) => {
-        // console.log(data)
         const result = await createAdventureRequest(data)
         setAdventures([...adventures, result.data])
-        // console.log(result)
     }
 
     const deleteAdventure = (id) => {
@@ -65,6 +69,9 @@ const AdventureProvider = ({ children }) => {
         // const updatedAdventure = res.data;
         const adventuress = await getLimitedAdventuresRequest(limit, page, search);
         setAdventures(adventuress.data.docs);
+        //ver que onda
+        setAdventuresHome(adventuress.data.docs);
+        setAdventuresTimeline(adventuress.data.docs);
     }
 
     //fixes
@@ -74,7 +81,7 @@ const AdventureProvider = ({ children }) => {
     }
 
     return (
-        <AdventureContext.Provider value={{ adventures, data, confirm, getAdventures, createAdventure, deleteAdventure, getAdventure, updateAdventure, getLimitedAdventures, getTotalAdventures, handleConfirm, changeAdventuresState }}>
+        <AdventureContext.Provider value={{ adventures, adventuresHome, adventuresTimeline, data, confirm, getAdventures, createAdventure, deleteAdventure, getAdventure, updateAdventure, getLimitedAdventures, getTotalAdventures, handleConfirm, changeAdventuresState }}>
             {children}
         </AdventureContext.Provider>
     )

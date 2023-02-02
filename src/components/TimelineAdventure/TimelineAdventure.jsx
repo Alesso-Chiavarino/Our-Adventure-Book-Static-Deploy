@@ -11,7 +11,7 @@ const TimelineAdventure = ({ title, description, image, _id }) => {
         }}>
             <article>
                 <div className='adventure rounded-md h-full'>
-                    <img className='time-adv-img' src={image.url} alt={title} />
+                    <img className='time-adv-img' src={image?.url} alt={title} />
                     <div className="flex flex-col justify-between p-3 gap-3">
                         <h3 className='text-gray-300 text-center'>{title}</h3>
                     </div>

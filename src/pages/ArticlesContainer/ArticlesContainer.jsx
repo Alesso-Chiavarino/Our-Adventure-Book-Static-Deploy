@@ -10,7 +10,11 @@ const ArticlesContainer = () => {
     useEffect(() => {
         const loadArticles = async () => {
             try {
-                await getLetters()
+                if (!letters.docs?.length) {
+                    await getLetters();
+                } else {
+                    setLoader(false);
+                }
             }
             catch (error) {
                 console.log(error)
@@ -49,7 +53,7 @@ const ArticlesContainer = () => {
 
                             timer += 300;
                             return <Article key={art._id} {...art} timer={timer} />
-                            
+
                         })}
                     </div>}
                 <div className="image-container flex justify-center items-center">

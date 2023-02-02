@@ -27,7 +27,15 @@ const Adventures = () => {
             setFavoritesFilter(false)
             setHomeFilter(false)
             setPartyFilter(false)
-            await getLimitedAdventures(12, 1, '')
+            await getLimitedAdventures(12, 1, '');
+            // if (!adventures.length) {
+            //     await getLimitedAdventures(12, 1, '');
+            //     setLoader(false);
+            // } else {
+            //     console.log('aca')
+            //     console.log(adventures)
+            //     setLoader(false);
+            // }
         }
         catch (error) {
             console.log(error)
@@ -116,16 +124,25 @@ const Adventures = () => {
     useEffect(() => {
         const loadAdventures = async () => {
             try {
-                if (fav) {
-                    if (allFilter) {
-                        handleConfirm(true);
-                        await handleFavoritesFilter();
-                    } else {
-                        handleConfirm(false);
-                    }
-                    await handleFavoritesFilter();
-                    return;
-                }
+                //try for now
+                // if (!adventures.length) {
+                //     await getLimitedAdventures(12, 1, '');
+                //     return setLoader(false);
+                // } else {
+                //     return setLoader(false);
+                // }
+                //closed for now
+
+                // if (fav) {
+                //     if (allFilter) {
+                //         handleConfirm(true);
+                //         await handleFavoritesFilter();
+                //     } else {
+                //         handleConfirm(false);
+                //     }
+                //     await handleFavoritesFilter();
+                //     return;
+                // }
                 if (search) {
                     setLoader(true)
                     setAllFilter(true)
