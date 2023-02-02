@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, getAdventureRequest, getAdventuresRequest, createAdventureRequest, deleteAdventureRequest, updateAdventureRequest, getLimitedAdventuresRequest, toast } from '../import'
+import { createContext, useContext, useState, getAdventureRequest, getAdventuresRequest, createAdventureRequest, deleteAdventureRequest, updateAdventureRequest, getLimitedAdventuresRequest, getTotalAventuresRequest, toast } from '../import'
 
 
 const AdventureContext = createContext();
@@ -26,6 +26,11 @@ const AdventureProvider = ({ children }) => {
         const data = result.data
         setAdventures(result.data.docs)
         setData(data);
+    }
+
+    const getTotalAdventures = async () => {
+        const orderedAdventures = await getTotalAventuresRequest()
+        setAdventures(orderedAdventures.data);
     }
 
     const createAdventure = async (data) => {
@@ -69,7 +74,7 @@ const AdventureProvider = ({ children }) => {
     }
 
     return (
-        <AdventureContext.Provider value={{ adventures, data, confirm, getAdventures, createAdventure, deleteAdventure, getAdventure, updateAdventure, getLimitedAdventures, handleConfirm, changeAdventuresState }}>
+        <AdventureContext.Provider value={{ adventures, data, confirm, getAdventures, createAdventure, deleteAdventure, getAdventure, updateAdventure, getLimitedAdventures, getTotalAdventures, handleConfirm, changeAdventuresState }}>
             {children}
         </AdventureContext.Provider>
     )

@@ -10,6 +10,11 @@ export const getLimitedAdventuresRequest = async (limit, page, search) => {
     // return await axios.get(`http://localhost:4000/api/adventure?limit=${limit}&page=${page}&search=${search}`);
 }
 
+export const getTotalAventuresRequest = async () => {
+    return await axios.get(`https://our-adventure-book-api-rest.onrender.com/api/adventure?total=true`);
+    // return await axios.get('http://localhost:4000/api/adventure?total=true');
+}
+
 export const getAdventureRequest = async (id) => {
     return await axios.get(`https://our-adventure-book-api-rest.onrender.com/api/adventure/${id}`);
     // return await axios.get(`http://localhost:4000/api/adventure/${id}`);

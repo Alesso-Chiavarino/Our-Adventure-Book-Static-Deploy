@@ -1,4 +1,4 @@
-import { TypeWriter, GrMail, MdFavorite, IoIosAlbums, FaListAlt, Link } from '../../import'
+import { TypeWriter, GrMail, MdTimeline, IoIosAlbums, FaListAlt, Link } from '../../import'
 import './Banner.scss';
 
 
@@ -49,11 +49,17 @@ const Banner = () => {
                         </div>
                     </a>
 
-                    <Link to='/adventures/favorites' onClick={goUp}>
+                    <Link to='/adventures/timeline' onClick={goUp}>
                         <div className="banner-card favs animate__animated animate__flipInY animate__faster " style={{ animationDelay: "1600ms" }}>
-                            <MdFavorite />
+                            <MdTimeline />
                         </div>
                     </Link>
+
+                    {/* <Link to='/adventures/favorites' onClick={goUp}>
+                        <div className="banner-card favs animate__animated animate__flipInY animate__faster " style={{ animationDelay: "1600ms" }}>
+                            <MdTimeline />
+                        </div>
+                    </Link> */}
 
                 </div>
             </div>
