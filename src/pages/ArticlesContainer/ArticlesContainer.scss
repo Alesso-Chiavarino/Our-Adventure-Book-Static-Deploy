@@ -1,76 +1,90 @@
 .articles-container {
 
-    margin-top: 30px;
-    margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 
-    .title-icon {
-        font-size: 25px;
+  .title-icon {
+    font-size: 25px;
+  }
+
+  .title {
+    font-family: mark-bold;
+    font-size: 1.125em;
+    width: 12.5em;
+    color: #f0f0f0;
+    align-self: flex-start;
+  }
+
+  .articles-grid {
+    width: 50%;
+  }
+
+  .more-articles {
+    color: #fff;
+    display: flex;
+    font-size: 0.875em;
+    font-family: mark-bold;
+    justify-content: center;
+    align-items: center;
+    background-color: #4F99C4;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #5295cbd2;
+      cursor: pointer;
+    }
+  }
+
+  .image-container {
+    width: 50%;
+    background-color: #4F99C4;
+    padding: 20px;
+    p {
+      font-family: mark-bold;
+      font-size: 0.875em;
+      color: #fff;
+      margin: 0;
+    }
+    img {
+      width: 10em;
+      height: 10em;
+      object-fit: cover;
+    }
+  }
+
+  .loader-article {
+    width: 100%;
+    height: 150px;
+    margin: auto;
+    display: block;
+    position: relative;
+    background: rgb(0, 0, 0);
+    box-sizing: border-box;
+    border: 1px solid #333;
+  }
+
+  .loader-article::after {
+    content: '';
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    top: 15px;
+    left: 15px;
+    position: absolute;
+    background-image: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.281) 50%, transparent 80%), linear-gradient(#333333 56px, transparent 0), linear-gradient(#333333 24px, transparent 0), linear-gradient(#333333 18px, transparent 0), linear-gradient(#333333 66px, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 75px 130px, 55px 56px, 160px 30px, 260px 20px, 290px 56px;
+    background-position: 0% 0, 0 0, 70px 5px, 70px 38px, 0px 66px;
+    box-sizing: border-box;
+    animation: animloaderArticle 1s linear infinite;
+  }
+
+  @keyframes animloaderArticle {
+    0% {
+      background-position: 0% 0, 0 0, 70px 5px, 70px 38px, 0px 66px;
     }
 
-    .title {
-        font-family: mark-bold;
-        font-size: 1.125em;
-        width: 12.5em;
-        color: #f0f0f0;
-        align-self: flex-start;
+    100% {
+      background-position: 150% 0, 0 0, 70px 5px, 70px 38px, 0px 66px;
     }
-
-    .articles-grid {
-        width: 50%;
-    }
-
-    .more-articles {
-        color: #fff;
-        display: flex;
-        font-size: 0.875em;
-        font-family: mark-bold;
-        justify-content: center;
-        align-items: center;
-        background-color: #5295CB;
-        border-radius: 5px;
-        
-        &:hover {
-            background-color: #5295cbd2;
-            cursor: pointer;
-        }
-    }
-
-    .image-container {
-        width: 50%;
-        background-color: #5295CB;
-    }
-    
-    .loader-article {
-        width: 100%;
-        height: 150px;
-        margin: auto;
-        display: block;
-        position: relative;
-        background: rgb(0, 0, 0);
-        box-sizing: border-box;
-        border: 1px solid #333;
-      }
-      .loader-article::after {
-        content: '';  
-        width: calc(100% - 30px);
-        height: calc(100% - 30px);
-        top: 15px;
-        left: 15px;
-        position: absolute;
-        background-image: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.281) 50%, transparent 80%), linear-gradient(#333333 56px, transparent 0), linear-gradient(#333333 24px, transparent 0), linear-gradient(#333333 18px, transparent 0), linear-gradient(#333333 66px, transparent 0);
-        background-repeat: no-repeat;
-        background-size: 75px 130px, 55px 56px, 160px 30px, 260px 20px, 290px 56px;
-        background-position: 0% 0, 0 0, 70px 5px, 70px 38px, 0px 66px;
-        box-sizing: border-box;
-        animation: animloaderArticle 1s linear infinite;
-      }
-      
-      @keyframes animloaderArticle {
-        0% {
-          background-position: 0% 0, 0 0, 70px 5px, 70px 38px, 0px 66px;
-        }
-        100% {
-          background-position: 150% 0, 0 0, 70px 5px, 70px 38px, 0px 66px;
-        }
-      }
+  }
 }

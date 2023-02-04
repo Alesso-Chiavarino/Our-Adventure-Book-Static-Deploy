@@ -56,8 +56,12 @@ const ArticlesContainer = () => {
 
                         })}
                     </div>}
-                <div className="image-container flex justify-center items-center">
+                <div className="image-container flex justify-center items-center flex-col">
                     <img src="./img/letter.svg" alt="" />
+                    <p>Lo mas bonito de estar enamorado es el silencio. Ese silencio que se crea cuando dos personas se miran a los ojos. Porque sabes que digas lo que digas, aunque intentes decirlo de la forma más espectacular posible, jamás nada podrá acercarse a explicar como te sientes.
+                    Y supongo que eso se llama amor:
+                    Sonreir callados.
+                    </p>
                 </div>
             </div>
         </section>
