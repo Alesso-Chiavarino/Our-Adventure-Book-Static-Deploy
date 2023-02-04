@@ -1,8 +1,9 @@
-import { useAdventure, useNavigate, useLocation, FaTrashAlt, AiFillEdit, MdFavorite, ToastContainer } from '../../import'
+import { useAdventure, useNavigate, useLocation, FaTrashAlt, AiFillEdit, MdFavorite, ToastContainer, toast } from '../../import'
 import './Adventure.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import 'animate.css';
-
+import { useEffect, useState } from 'react';
+import { BsCheckLg } from 'react-icons/bs';
 
 const Adventure = ({ title, description, _id, image, date, id, category, setAllFilter, setFavoritesFilter }) => {
 
@@ -11,6 +12,12 @@ const Adventure = ({ title, description, _id, image, date, id, category, setAllF
   const delay = id * 120
 
   const limitedDescription = description.substring(0, 90);
+
+  const [cat, setCat] = useState([])
+
+  useEffect(() => {
+    loadCats()
+  }, [])
 
   const handleFav = () => {
     if (category) {
@@ -65,6 +72,25 @@ const Adventure = ({ title, description, _id, image, date, id, category, setAllF
     }
   }
 
+
+  const loadCats = async () => {
+    const res = await fetch('https://api.thecatapi.com/v1/images/search?api_key=live_0aOjjynFDBRuXQehDLibHOqiocsZF6yBygz9MmwOT3jBuD0p3uy5rjZ46vmzXE7K&limit=1');
+    const data = await res.json();
+    setCat(data[0].url);
+  }
+
+  const handleDelete = async (e) => {
+    e.stopPropagation();
+    await deleteAdventure(_id);
+    toast.dark(
+      <div className="flex flex-col gap-3">
+        <h1 className='text-2xl'>Adventure deleted</h1>
+        <img className='w-full h-60' src={cat} alt="madafacking cat" />
+      </div>
+    )
+  }
+
+
   const { pathname } = useLocation()
 
   const renderMain = () => {
@@ -91,10 +117,7 @@ const Adventure = ({ title, description, _id, image, date, id, category, setAllF
                 window.scroll(0, 50);
                 navigate(`/new/${_id}`)
               }} />
-              <FaTrashAlt className='text-white cursor-pointer trash' onClick={(e) => {
-                e.stopPropagation();
-                deleteAdventure(_id)
-              }} />
+              <FaTrashAlt className='text-white cursor-pointer trash' onClick={(e) => handleDelete(e)} />
             </div>
 
             {image && <img className='adv-img' src={image.url} alt={title} />}
@@ -108,7 +131,7 @@ const Adventure = ({ title, description, _id, image, date, id, category, setAllF
               <p className=''>{date}</p>
             </div>
           </div>
-          <ToastContainer />
+          <ToastContainer position='top-center' />
         </article>
       )
     } else {

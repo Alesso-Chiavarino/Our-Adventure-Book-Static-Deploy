@@ -10,7 +10,7 @@ const AdventuresContainer = () => {
 
     useEffect(() => {
         const loadAdventures = async () => {
-            if (!adventuresHome.length) {
+            if (!adventuresHome?.length) {
                 await getLimitedAdventures(10, 1, '');
                 setLoader(false);
             } else {
