@@ -293,7 +293,7 @@ const Form = () => {
           <span className='text-white go-back-icon'>  </span>
           <article className='card'>
             <form onSubmit={handleSubmit}>
-              {params.id ? <h1>Edit an adventure</h1> : <h1>Create an adventure</h1>}
+              {params.id ? <h1>Edit an adventure</h1> : <h1 className='bg-clip-text bg-gradient-to-r from-blue-400 to-green-400'>Create an adventure</h1>}
               <div className="form-group relative">
                 <label htmlFor="name">Title</label>
                 <input type="text" className="form-control" id="name" value={title} placeholder='Type a title...' onChange={handleTitle} onBlur={handleTitle} onKeyUp={handleTitle} />

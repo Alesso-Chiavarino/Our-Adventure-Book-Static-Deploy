@@ -47,14 +47,20 @@
 
 .card::before {
     content: "";
-
     width: 101%;
     height: 101%;
     border-radius: 0.5em;
-    background-image: linear-gradient(var(--rotate), #02f0ac, #04c28c 43%, #00aa7a);
     position: absolute;
     z-index: -1;
     animation: spin 2.5s linear infinite;
+    background: #99AAFF;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#44a4ff), to(#33EEDA));
+    background: -webkit-linear-gradient(#44a4ff, #33EEDA);
+    background: -moz-linear-gradient(#44a4ff, #33EEDA);
+    background: -ms-linear-gradient(#44a4ff, #33EEDA);
+    background: -o-linear-gradient(#44a4ff, #33EEDA);
+    background: linear-gradient(#44a4ff, #33EEDA);
+    -pie-background: linear-gradient(#44a4ff, #33EEDA);
 }
 
 .card::after {
@@ -68,10 +74,18 @@
     margin: 0 auto;
     transform: scale(0.8);
     filter: blur(calc(var(--card-height) / 6));
-    background-image: linear-gradient(var(--rotate), #02f0ac, #04c28c 43%, #00aa7a);
     opacity: 1;
     transition: opacity .5s;
     animation: spin 2.5s linear infinite;
+    -moz-animation: spin 2.5s linear infinite;
+    background: #44a4ff;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#99AAFF), to(#33EEDA));
+    background: -moz-linear-gradient(#99AAFF, #33EEDA);
+    background: -ms-linear-gradient(#99AAFF, #33EEDA);
+    background: -o-linear-gradient(#99AAFF, #33EEDA);
+    background: linear-gradient(#99AAFF, #33EEDA);
+    -pie-background: linear-gradient(#99AAFF, #33EEDA);
+    background: -webkit-linear-gradient(var(--rotate), #02f0ac, #44a4ff 43%, #33EEDA);
 }
 
 @keyframes spin {
@@ -114,7 +128,7 @@
         width: fit-content;
 
         h1 {
-            color: #02f0ac;
+            // color: #02f0ac;
             font-family: mark-bold;
             font-size: 1.6em;
             align-self: flex-start;
@@ -271,7 +285,7 @@
 
         .error-message {
             // display: block;
-            margin-top: 5px ;
+            margin-top: 5px;
             bottom: 2;
             right: 0;
             position: absolute;

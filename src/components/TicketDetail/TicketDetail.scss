@@ -4,56 +4,60 @@
 
     .title {
         padding-top: 30px;
-        margin-bottom: 30px;
+        // margin-bottom: 30px;
         text-align: center;
         font-size: 2.5em;
         color: #fff;
         font-family: mark-heavy;
     }
 
-    .ticket {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-        min-width: 650px;
-        min-height: 300px;
-        // aspect-ratio: 18/9;
+    .ticket-father {
+        transition: all 0.5s ease;
 
-        .left {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-right: 0.5px solid #303030;
+        .ticket {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+            min-width: 650px;
+            min-height: 300px;
+            // aspect-ratio: 18/9;
 
-            .rotate {
-                width: fit-content;
-                transform: rotate(-90deg);
+            .left {
                 display: flex;
-                flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                border-right: 0.5px solid #303030;
+
+                .rotate {
+                    width: fit-content;
+                    transform: rotate(-90deg);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    h3 {
+                        letter-spacing: 3px;
+                    }
+
+                    .theatre {
+                        letter-spacing: 2px;
+                    }
+                }
 
                 h3 {
-                    letter-spacing: 3px;
+                    font-family: mark-heavy;
                 }
 
-                .theatre {
-                    letter-spacing: 2px;
-                }
             }
 
-            h3 {
-                font-family: mark-heavy;
+            .right {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
             }
 
-        }
 
-        .right {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
         }
-
-        transition: all 0.5s ease;
 
         &:hover {
             transition: all 0.1s ease;
@@ -61,10 +65,14 @@
         }
     }
 
+
+
     .ticket-mobile {
-        touch-action: none;
+
+        touch-action: none; // <== no hay scroll
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
         min-height: 300px;
+        user-select: none; // <== no hay selección
 
         .left {
             display: flex;
@@ -121,7 +129,8 @@
     }
 
     .wrapper {
-        perspective: 1000px;
+        perspective: 1200px;
+        padding: 20px;
     }
 
 

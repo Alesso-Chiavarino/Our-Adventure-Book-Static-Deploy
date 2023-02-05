@@ -150,41 +150,43 @@ const TicketDetail = () => {
                             ticketRef.current.style.transform = `rotateX(0deg) rotateY(0deg) translateZ(0) `;
                         }}
                     >
-                        <div className="ticket" ref={ticketRef}>
-                            <article className="ticket bg-slate-50 grid grid-cols-2">
-                                <div className="left">
-                                    <div className='rotate'>
-                                        <h3 className='text-gray-400 font-semibold mb-5 text-3xl'>SHOWCASE</h3>
-                                        <div className="icon flex flex-col items-center justify-center">
-                                            <span className='text-gray-500 text-md font-bold'>SHOWCASE</span>
-                                            <span className='text-blue-300 font-bold text-3xl'>IMAX</span>
-                                            <span className='text-gray-500 text-md theatre font-bold'>THEATRE</span>
+                        <div className='p-10 ticket-father' ref={ticketRef}>
+                            <div className="ticket">
+                                <article className="ticket bg-slate-50 grid grid-cols-2">
+                                    <div className="left">
+                                        <div className='rotate'>
+                                            <h3 className='text-gray-400 font-semibold mb-5 text-3xl'>SHOWCASE</h3>
+                                            <div className="icon flex flex-col items-center justify-center">
+                                                <span className='text-gray-500 text-md font-bold'>SHOWCASE</span>
+                                                <span className='text-blue-300 font-bold text-3xl'>IMAX</span>
+                                                <span className='text-gray-500 text-md theatre font-bold'>THEATRE</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
 
-                                <div className="right p-2">
-                                    <h3 className='text-5xl font-semi-bold'>{ticket.title}</h3>
-                                    <span>solo valido para:</span>
-                                    <div className="flex gap-5">
-                                        <span className='text-2xl'>{ticket.date}</span>
-                                        <span className='text-2xl'>{ticket.hour}</span>
+                                    <div className="right p-2">
+                                        <h3 className='text-5xl font-semi-bold'>{ticket.title}</h3>
+                                        <span>solo valido para:</span>
+                                        <div className="flex gap-5">
+                                            <span className='text-2xl'>{ticket.date}</span>
+                                            <span className='text-2xl'>{ticket.hour}</span>
+                                        </div>
+                                        <h4 className='text-3xl'>Sala {ticket.room}</h4>
+                                        <div className="flex gap-1 items-end">
+                                            <span className='text-2xl'>Asiento:</span>
+                                            <h4 className='text-4xl'>{ticket.seat}</h4>
+
+                                        </div>
+                                        <div className="flex gap-5">
+                                            <span className='text-xl'>SHMAS2D</span>
+                                            <span className='text-xl font-semibold'>${ticket.price}</span>
+                                        </div>
                                     </div>
-                                    <h4 className='text-3xl'>Sala {ticket.room}</h4>
-                                    <div className="flex gap-1 items-end">
-                                        <span className='text-2xl'>Asiento:</span>
-                                        <h4 className='text-4xl'>{ticket.seat}</h4>
-
-                                    </div>
-                                    <div className="flex gap-5">
-                                        <span className='text-xl'>SHMAS2D</span>
-                                        <span className='text-xl font-semibold'>${ticket.price}</span>
-                                    </div>
-                                </div>
 
 
-                            </article>
+                                </article>
+                            </div>
                             <div className="bg"></div>
                         </div>
                     </div>
