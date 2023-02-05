@@ -28,13 +28,19 @@ import TypeWriter from './components/TypeWriter/TypeWriter';
 import ArticlesContainer from './pages/ArticlesContainer/ArticlesContainer';
 import Article from './components/Article/Article';
 import Timeline from './pages/Timeline/Timeline';
+import TicketsContainer from './components/TicketsContainer/TicketsContainer';
+import TicketDetail from './components/TicketDetail/TicketDetail'
+import TicketProvider from './context/TicketContext';
+import Ticket from './components/Ticket/Ticket';
 import axios from "axios";
 import { getAdventuresRequest, getAdventureRequest, createAdventureRequest, deleteAdventureRequest, updateAdventureRequest, getLimitedAdventuresRequest, getTotalAventuresRequest } from './api/adventure.api'
 import { getLettersRequest, getLetterRequest, createLetterRequest, updateLetterRequest, deleteLetterRequest } from "./api/Letter.api";
 import { getTasksRequest, getTaskRequest, createTaskRequest, updateTaskRequest, deleteTaskRequest } from "./api/Task.api"
+import { getTicketsRequest, getTicketRequest, createTicketRequest, updateTicketRequest, deleteTicketRequest } from './api/ticket.api';
 import { useAdventure } from "./context/AdventureContext";
 import { useLetter } from './context/LetterContext';
 import { useTask } from './context/TaskContext';
+import { useTicket } from './context/TicketContext';
 import { ToastContainer, toast } from 'react-toastify';
 import { Typewriter } from 'react-simple-typewriter'
 import { ThreeDots } from 'react-loader-spinner'
@@ -47,6 +53,7 @@ import { BiLinkAlt } from 'react-icons/bi'
 import { VscEmptyWindow } from 'react-icons/vsc'
 import { GrMail } from 'react-icons/gr'
 import { IoIosAlbums, IoIosOpen, IoIosCreate } from 'react-icons/io'
+import { IoTicket } from 'react-icons/io5'
 import { GiWhiteBook } from 'react-icons/gi'
 import { RiSendPlaneFill } from 'react-icons/ri'
 import { RxUpdate, RxDoubleArrowLeft, RxDoubleArrowRight } from 'react-icons/rx'
@@ -99,11 +106,16 @@ export {
     ArticlesContainer,
     Article,
     Timeline,
+    TicketsContainer,
+    TicketDetail,
+    TicketProvider,
+    Ticket,
     //context
     useAdventure,
     useSearch,
     useLetter,
     useTask,
+    useTicket,
     //api
     axios,
     createAdventureRequest,
@@ -119,10 +131,15 @@ export {
     getLettersRequest,
     updateLetterRequest,
     getTasksRequest,
-    getTaskRequest, 
-    createTaskRequest, 
-    updateTaskRequest, 
+    getTaskRequest,
+    createTaskRequest,
+    updateTaskRequest,
     deleteTaskRequest,
+    getTicketsRequest,
+    getTicketRequest,
+    createTicketRequest,
+    updateTicketRequest,
+    deleteTicketRequest,
     //icons
     AiFillEdit,
     AiFillHome,
@@ -148,6 +165,7 @@ export {
     IoIosAlbums,
     IoIosOpen,
     IoIosCreate,
+    IoTicket,
     ImCheckboxUnchecked,
     ImCheckboxChecked,
     TbArrowBackUp,

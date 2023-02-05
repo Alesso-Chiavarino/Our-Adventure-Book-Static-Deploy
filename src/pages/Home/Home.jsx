@@ -1,4 +1,3 @@
-import Ticket from '../../components/Ticket/Ticket';
 import { AdventuresContainer, Banner, ArticlesContainer } from '../../import';
 import './Home.scss';
 
@@ -10,7 +9,6 @@ const Home = () => {
                 <Banner />
                 <AdventuresContainer />
                 <ArticlesContainer />
-                <Ticket/>
             </main>
 
         </section>

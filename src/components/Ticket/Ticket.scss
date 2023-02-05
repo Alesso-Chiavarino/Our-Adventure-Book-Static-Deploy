@@ -1,26 +1,57 @@
-.ticket {
-    box-shadow: 0 0 50px rgba(0, 0, 0,  .4 );
-    border: 2px solid rgba(0, 153, 255, 0.4);
-    width: 600px;
-    aspect-ratio: 18/9;
-    border-radius: 6px;
-    position: relative;
-    transition: transform .5s ease-in-out !important;
-    &:hover {
-        transition   : none !important;
+.ticket-container {
+    .ticket {
+        transition: all .2s;
+        cursor: pointer;
+
+        // width: fit-content;
+        .left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 0.5px solid #303030;
+
+            .rotate {
+                width: fit-content;
+                transform: rotate(-90deg);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                h3 {
+                    letter-spacing: 3px;
+                }
+
+                .theatre {
+                    letter-spacing: 2px;
+                }
+            }
+
+            h3 {
+                font-family: mark-heavy;
+                // font-size: 1.5em;
+                // color: #fff;
+            }
+
+            // .icon {
+
+            // }
+        }
+
+        .right {
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+
+            // border-left: 0.5px solid #303030;
+            // padding: 10px;
+            margin: 0 auto;
+        }
+
+        &:hover {
+            transform: translate(0, -5px);
+        }
     }
-}
-
-.bg {
-    top: 0;
-    background-color: rgba(0, 0, 0, .3);
-    position: absolute;
-    filter: blur(20px);
-    width: 100%;
-    height: 100%;
-}
-
-.wrapper {
-    perspective: 1000px;
-    // width: fit-content;
 }

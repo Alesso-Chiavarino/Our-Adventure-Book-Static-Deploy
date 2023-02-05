@@ -1,4 +1,4 @@
-import { TypeWriter, GrMail, MdTimeline, IoIosAlbums, FaListAlt, Link } from '../../import'
+import { TypeWriter, GrMail, MdTimeline, IoIosAlbums, FaListAlt, Link, IoTicket } from '../../import'
 import './Banner.scss';
 
 
@@ -43,17 +43,23 @@ const Banner = () => {
                         </div>
                     </a>
 
-                    <a href='https://www.tiktok.com/@user6195661253900' rel="noreferrer" target='_blank' onClick={goUp}>
+                    <Link to={'/tickets'} rel="noreferrer" onClick={goUp}>
                         <div className="banner-card tiktok animate__animated animate__flipInY animate__faster " style={{ animationDelay: "1300ms" }}>
-                            <img src="./img/tiktok.svg" alt="" />
+                            <IoTicket className='text-white' />
                         </div>
-                    </a>
+                    </Link>
 
                     <Link to='/adventures/timeline' onClick={goUp}>
                         <div className="banner-card favs animate__animated animate__flipInY animate__faster " style={{ animationDelay: "1600ms" }}>
                             <MdTimeline />
                         </div>
                     </Link>
+
+                    {/* <a href='https://www.tiktok.com/@user6195661253900' rel="noreferrer" target='_blank' onClick={goUp}>
+                        <div className="banner-card tiktok animate__animated animate__flipInY animate__faster " style={{ animationDelay: "1300ms" }}>
+                            <img src="./img/tiktok.svg" alt="" />
+                        </div>
+                    </a> */}
 
                     {/* <Link to='/adventures/favorites' onClick={goUp}>
                         <div className="banner-card favs animate__animated animate__flipInY animate__faster " style={{ animationDelay: "1600ms" }}>
