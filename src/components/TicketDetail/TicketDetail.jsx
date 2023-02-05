@@ -37,6 +37,11 @@ const TicketDetail = () => {
     const halfWidth = width / 2;
     const halfHeight = height / 2;
 
+    const detectMobileDevice = () => {
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        //true => mobile || false => desktop
+    };
+
 
     const handleMouseMove = (e) => {
         ticketRef.current.style.transform = transform;
@@ -68,7 +73,8 @@ const TicketDetail = () => {
     }
 
     const renderMain = () => {
-        if (!window.innerWidth <= 767) {
+        
+        if (detectMobileDevice) {
             return (
                 <div className="ticket-detail flex justify-center mx-5">
                     <div
@@ -145,7 +151,7 @@ const TicketDetail = () => {
                         <h1 className='title mx-auto '>Our Ticket</h1>
                         <span className='loader-ticket collapse'></span>
                     </div>}
-                    {renderMain()}
+                {renderMain()}
             </main>
         </section>
     );
