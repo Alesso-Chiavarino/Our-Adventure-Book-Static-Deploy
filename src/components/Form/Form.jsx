@@ -247,7 +247,9 @@ const Form = () => {
       }
     } else {
       return (
-        <button type="submit" onClick={() => setIsSubmit(true)} ><RiSendPlaneFill /> Submit</button>
+        <div className='bg-gradient-to-r from-blue-400 to-green-400 p-[2px] rounded-md overflow-hidden shadow hover:shadow-blue-400'>
+          <button type="submit" className='bg-[#191C29] rounded-md' onClick={() => setIsSubmit(true)} ><RiSendPlaneFill /> Submit</button>
+        </div>
       )
     }
   }

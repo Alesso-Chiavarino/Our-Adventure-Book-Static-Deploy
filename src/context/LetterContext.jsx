@@ -11,8 +11,8 @@ export const LetterProvider = ({ children }) => {
 
     const [letters, setLetters] = useState([]);
 
-    const getLetters = async (page) => {
-        const letters = await getLettersRequest(page)
+    const getLetters = async (page, limit) => {
+        const letters = await getLettersRequest(page, limit)
         setLetters(letters.data);
     }
 

@@ -1,0 +1,83 @@
+.ticket-form-section {
+    min-height: 100vh;
+    background-color: #0E0E0E;
+
+    .form-title {
+        font-size: 40px;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        font-family: mark-heavy;
+    }
+
+    .form-container-ticket {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .form-title {
+            margin-top: 2.5rem;
+            font-size: 2.5em;
+            color: #fff;
+            text-align: center;
+            font-family: mark-heavy;
+        }
+
+        form {
+            width: 100% !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 0.9375em;
+            border-radius: 0.375em;
+            width: fit-content;
+
+            h1 {
+                font-family: mark-bold;
+                font-size: 1.6em;
+                align-self: flex-start;
+                margin-bottom: 2em;
+            }
+
+            .form-group {
+                margin-bottom: 1em;
+                width: 100%;
+                margin: 0 auto;
+
+                label {
+                    display: block;
+                    margin-bottom: 0.5em;
+                    color: #fff;
+                    font-family: mark-bold;
+                }
+
+                input {
+                    color: #ccc;
+                    width: 100%;
+                    font-size: 0.875em;
+                    padding: 0.5em;
+                    border: 1.5px solid rgba(255, 255, 255, .493);
+                    border-radius: 0.25em;
+                    background-color: transparent;
+                    outline: none !important;
+                    box-shadow: none !important;
+
+                    &::placeholder {
+                        font-family: mark-pro-heavy;
+                        color: rgba(255, 255, 255, 0.493);
+                        font-family: mark-bold;
+
+                    }
+
+                    &:focus {
+                        border: 1.5px solid #02f0ac;
+                        transition: 0.3s all;
+                        box-shadow: #02f0ac 0px 0px 3px 0px;
+                    }
+                }
+            }
+        }
+    }
+}

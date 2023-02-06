@@ -201,13 +201,13 @@ const TicketDetail = () => {
         <section className='ticket-detail-container'>
             <main className='container mx-auto'>
                 {loader ?
-                    <div className='flex items-center justify-center'>
+                    <div className='flex items-center justify-center pt-5'>
                         <span className='loader-ticket collapse'></span>
                         <h1 className='title '>Our Ticket</h1>
                         <span className='loader-ticket'></span>
                     </div>
                     :
-                    <div className='flex items-center justify-center'>
+                    <div className='flex items-center justify-center pt-5'>
                         <span className='loader-ticket collapse'></span>
                         <h1 className='title mx-auto '>Our Ticket</h1>
                         <span className='loader-ticket collapse'></span>

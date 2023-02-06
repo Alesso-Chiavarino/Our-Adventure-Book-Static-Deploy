@@ -11,7 +11,7 @@ const ArticlesContainer = () => {
         const loadArticles = async () => {
             try {
                 if (!letters.docs?.length) {
-                    await getLetters();
+                    await getLetters(1, 6);
                 } else {
                     setLoader(false);
                 }

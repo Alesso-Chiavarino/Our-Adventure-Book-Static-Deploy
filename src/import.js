@@ -32,6 +32,7 @@ import TicketsContainer from './components/TicketsContainer/TicketsContainer';
 import TicketDetail from './components/TicketDetail/TicketDetail'
 import TicketProvider from './context/TicketContext';
 import Ticket from './components/Ticket/Ticket';
+import TicketForm from './components/TicketForm/TicketForm';
 import axios from "axios";
 import { getAdventuresRequest, getAdventureRequest, createAdventureRequest, deleteAdventureRequest, updateAdventureRequest, getLimitedAdventuresRequest, getTotalAventuresRequest } from './api/adventure.api'
 import { getLettersRequest, getLetterRequest, createLetterRequest, updateLetterRequest, deleteLetterRequest } from "./api/Letter.api";
@@ -110,6 +111,7 @@ export {
     TicketDetail,
     TicketProvider,
     Ticket,
+    TicketForm,
     //context
     useAdventure,
     useSearch,

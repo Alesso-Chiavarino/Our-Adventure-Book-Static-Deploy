@@ -1,10 +1,10 @@
 import { axios } from "../import";
 
-export const getLettersRequest = (page) => {
+export const getLettersRequest = (page, limit) => {
 
     if(page) {
-        return axios.get(`https://our-adventure-book-api-rest.onrender.com/api/letters?page=${page}`);
-        // return axios.get(`http://localhost:4000/api/letters?page=${page}`);
+        return axios.get(`https://our-adventure-book-api-rest.onrender.com/api/letters?page=${page}&limit=${limit}`);
+        // return axios.get(`http://localhost:4000/api/letters?page=${page}&limit=${limit}`);
     }
     
     return axios.get('https://our-adventure-book-api-rest.onrender.com/api/letters');

@@ -19,7 +19,7 @@ const LettersContainer = () => {
             }
         }
         loadLetters();
-    }, [letters])
+    }, [])
 
     const handleNext = () => {
         if (letters.hasNextPage) {

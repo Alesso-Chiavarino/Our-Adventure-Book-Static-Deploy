@@ -1,6 +1,5 @@
 import './styles/responsive.scss';
-import { AdventureModal, AdventureProvider, Adventures, BrowserRouter, Footer, Form, Home, LetterDetail, LetterForm, LetterProvider, LettersContainer, Navbar, NotFound, Route, Routes, SearchProvider, TaskDetail, TaskForm, TaskProvider, TasksContainer, Timeline, TicketsContainer, TicketProvider, TicketDetail } from './import';
-
+import { AdventureModal, AdventureProvider, Adventures, BrowserRouter, Footer, Form, Home, LetterDetail, LetterForm, LetterProvider, LettersContainer, Navbar, NotFound, Route, Routes, SearchProvider, TaskDetail, TaskForm, TaskProvider, TasksContainer, Timeline, TicketsContainer, TicketProvider, TicketDetail, TicketForm } from './import';
 
 const App = () => {
   return (
@@ -30,6 +29,8 @@ const App = () => {
                   <Route path="/adventures/timeline" element={<Timeline />} />
                   <Route path="/tickets" element={<TicketsContainer />} />
                   <Route path="/tickets/detail/:id" element={<TicketDetail />} />
+                  <Route path="/tickets/form" element={<TicketForm />} />
+                  <Route path="/tickets/form/:id" element={<TicketForm />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />

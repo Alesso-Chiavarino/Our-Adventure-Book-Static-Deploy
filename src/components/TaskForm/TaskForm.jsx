@@ -128,7 +128,7 @@ const TaskForm = () => {
                 <span className='text-white go-back-icon'>  </span>
                 <article className='card'>
                     <form onSubmit={handleSubmit}>
-                        {params.id ? <h1>Edit a Task </h1> : <h1>Create a Task</h1>}
+                        {params.id ? <h1 className='bg-clip-text bg-gradient-to-r from-green-400 to-blue-400'>Edit a Task </h1> : <h1 className='bg-clip-text bg-gradient-to-r from-green-400 to-blue-400'>Create a Task</h1>}
                         <div className="form-group">
                             <label htmlFor="name">Title</label>
                             <input type="text" className="form-control" id="name" value={title} placeholder='Type a title...' onChange={handleTitle} />
