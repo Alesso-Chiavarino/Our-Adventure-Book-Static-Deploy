@@ -9,7 +9,7 @@ const LettersContainer = () => {
     useEffect(() => {
         const loadLetters = async () => {
             try {
-                getLetters(1);
+                getLetters(1, 12);
             }
             catch (error) {
                 console.log(error)
@@ -23,13 +23,13 @@ const LettersContainer = () => {
 
     const handleNext = () => {
         if (letters.hasNextPage) {
-            getLetters(letters.nextPage)
+            getLetters(letters.nextPage, 12)
         }
     }
 
     const handlePrevius = () => {
         if (letters.hasPrevPage) {
-            getLetters(letters.prevPage)
+            getLetters(letters.prevPage, 12)
         }
     }
 

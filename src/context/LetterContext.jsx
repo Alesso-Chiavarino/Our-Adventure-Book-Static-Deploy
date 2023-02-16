@@ -29,7 +29,7 @@ export const LetterProvider = ({ children }) => {
     const updateLetter = async (id, letter) => {
         await updateLetterRequest(id, letter)
         const letters = await getLettersRequest(1);
-        setLetters(letters.data);
+        setLetters(letters.data.docs);
     }
 
     const deleteLetter = async (id) => {
